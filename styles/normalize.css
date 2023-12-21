@@ -1,0 +1,67 @@
+:root {
+    --primary-bg-color: #F3F4F6;
+    --primary-product-color: #E6F6FD;
+    --topic-texts-color: #3F3F46;
+    --p-colors: #64768B;
+    --cost-color: #2ED473;
+    --blue: #0EA5E9;
+    --light-blue: #75A5E9;
+    --srar-color: #F9A134;
+    --pure-white: #fff;
+    --tomato: #F2295B;
+    --pink: #EC4899;
+    --course-hoze: #0EA5E9;
+    --scroller-color: #a3a3a3;
+    --lessons-color: #33363c4d;
+    --user-comment: #F3F4F6;
+    --comment-ans: #E5E7EB;
+}
+
+@font-face {
+    font-family: "persian";
+    src: url("../fonts/فونت\ سرباز.ttf") format("truetype");
+}
+
+*,
+*::after,
+*::before {
+    font-family: "persian" !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+*::-webkit-scrollbar {
+    width: .5rem
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroller-color);
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    font-size: 1.6rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover:not(.signlogin a, .topic__buttons a) {
+    transition: all 0.3s ease;
+    color: var(--cost-color);
+}
+
+input {
+    border: none;
+    outline: none;
+}

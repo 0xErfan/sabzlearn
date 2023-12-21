@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://sabzlearn.ir/wp-content/uploads/2023/08/cropped-sabz-fav-32x32.png">
+    <link rel="stylesheet" href="styles/grid.css">
+    <link rel="stylesheet" href="styles/session.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <title>sessions</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header__wrapper">
+            <div class="navigation"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg></div>
+            <div class="header__courses">
+                <div class="header__logo"><a href="http://127.0.0.1:5500/index.html"><img src="img/logo.webp"
+                            title="sabzlearn" alt="sabzlearn"></a></div>
+                <div class="header__courses--list">
+                    <!-- load from db -->
+                </div>
+            </div>
+            <div class="header__useracount">
+                <div class="show__data" id="fesharr">
+                    <div class="show__data--name">
+                        <img src="img/footer-user-img.png" alt="user data">
+                        <div class="show__username">
+                            <a class="nameofuser" href="#"></a>
+                            <a href="#">موجودی: ۰ تومان</a>
+                        </div>
+                    </div>
+                    <a href="#">پیشخوان <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                        </svg></a>
+                    <a href="#">دوره های من <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                        </svg></a>
+                    <a href="#">تیکت های پشتیبانی <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                        </svg></a>
+                    <a href="#" class="exit__account">خروج <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                        </svg></a>
+                </div>
+                <div class="user__profile">
+                    <img src="img/footer-user-img.png" alt="profile">
+                </div>
+                <a href="http://127.0.0.1:5500/log_in.html" class="regular__user">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+
+                </a>
+                <div class="signlogin">
+                    <a href="http://127.0.0.1:5500/log_in.html" class="log">ورود</a>
+                    <a href="http://127.0.0.1:5500/sign_in.html" target="_blank" class="sign">عضویت</a>
+                </div>
+                <div class="user__theme"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg></div>
+                <div class="header__searhbox">
+                    <input type="text" class="header__searhbox--input" placeholder="جستجو">
+                    <div class="header__search--svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu__topic">
+                <div class="site__logo"><img src="img/logo.webp" alt="sabzlearn"></div>
+                <div class="menu__title">Libanogs(:</div>
+                <div class="close__menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg></div>
+            </div>
+            <div class="header__searhboxmenu">
+                <input type="text" class="header__searhbox--inputmenu" placeholder="جستجو">
+                <div class="header__search--svgmenu"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+                    </svg></div>
+            </div>
+            <ul class="menu__course--wrapper">
+                <!-- load from db -->
+            </ul>
+            <div class="change__theme-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z">
+                    </path>
+                </svg>
+                <div>تم تیره</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Start Course Path -->
+            <div class="course__path">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+                <p>دوره ها</p>
+                <p id="course__hoze">فرانت اند</p>
+                <h4 id="course-path-name">آموزش ری اکت ( ReactJS ) در دنیای واقعی | از 0 تا استخدام [منتورشیپ]</h4>
+            </div>
+            <div class="form__modal">
+                <div class="form__msg">
+                    <div class="form__status--msg">خطا</div>
+                    <div class="form__details-msg">لطفا نام کاربری، شماره موبایل، ایمیل و رمز عبور را به درستی وارد
+                        کنید.</div>
+                </div>
+                <div class="form__svg">
+                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                </div>
+                <div class="form__linetime"></div>
+            </div>
+            <!-- Finish Course Path -->
+
+
+            <!-- start course video -->
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <div class="course__video-wrapper">
+                        <sapn class="idn idn--comment">آموزش ری اکت ( ReactJS ) در دنیای واقعی | از 0 تا استخدام
+                            [منتورشیپ]</sapn>
+                        <video class="course__content-video" src="#"
+                            poster="http://localhost:4000/courses/covers/fareelancer.png" controls=""></video>
+                        <div class="session__title-wrapper">
+                            <p id="session__number">1</p>
+                            <p id="session__title">hi just for test</p>
+                        </div>
+                        <div class="session__buttons">
+                            <a href="#" id="session__download-link" download="#">دانلود ویدیو
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" data-slot="icon" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                </svg>
+                            </a>
+                            <button>دانلود همگانی
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" data-slot="icon" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="sessions__container">
+                        <!-- load from db -->
+                        <div class="lesson session__lessons">
+                            <div class="lesson__topic-wrapper">
+                                <p class="lesson__topic">فصل اول</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: rotate(0deg);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"></path>
+                                </svg>
+                            </div>
+                
+                            <ul class="sessions__wrapper">
+                
+                            
+                            <li class="lesson__detail" style="display: flex;">
+                
+                                
+                                        <a href="session.html?id=636252530fda8658687d581c&amp;title=js-20-lib" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                                            <div class="lesson__detail-number"></div>
+                                            <div class="lesson__detail-text">آشنایی اولیه با متد toFixed</div>
+                                        </a>
+                                    
+                
+                                <div class="lesson__detail-status">
+                                    <div class="lesson__detail-duration">
+                                        <div id="lesson__status">12:09</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: none;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z">
+                                            </path>
+                                        </svg>
+                
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li class="lesson__detail" style="display: flex;">
+                
+                                
+                                        <a href="session.html?id=636252edc1e677a316578e7a&amp;title=js-20-lib" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                                            <div class="lesson__detail-number"></div>
+                                            <div class="lesson__detail-text">نحوه پیاده سازی پروژه فلان</div>
+                                        </a>
+                                    
+                
+                                <div class="lesson__detail-status">
+                                    <div class="lesson__detail-duration">
+                                        <div id="lesson__status">19:21</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: none;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z">
+                                            </path>
+                                        </svg>
+                
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li class="lesson__detail" style="display: flex;">
+                
+                                
+                                        <div onclick="showModal()" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                                            <div class="lesson__detail-number"></div>
+                                            <div class="lesson__detail-text">کار با لایبرری SweetAlert</div>
+                                        </div>
+                                    
+                
+                                <div class="lesson__detail-status">
+                                    <div class="lesson__detail-duration">
+                                        <div id="lesson__status">19:15</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: none;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z">
+                                            </path>
+                                        </svg>
+                
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li class="lesson__detail" style="display: flex;">
+                
+                                
+                                        <div onclick="showModal()" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                                            <div class="lesson__detail-number"></div>
+                                            <div class="lesson__detail-text">کار با لایبرری swiper js</div>
+                                        </div>
+                                    
+                
+                                <div class="lesson__detail-status">
+                                    <div class="lesson__detail-duration">
+                                        <div id="lesson__status">12:00</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: none;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z">
+                                            </path>
+                                        </svg>
+                
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li class="lesson__detail" style="display: flex;">
+                
+                                
+                                        <a href="session.html?id=6364d48af0596415300eea26&amp;title=js-20-lib" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                                            <div class="lesson__detail-number"></div>
+                                            <div class="lesson__detail-text">کار با لایبرری chartjs</div>
+                                        </a>
+                                    
+                
+                                <div class="lesson__detail-status">
+                                    <div class="lesson__detail-duration">
+                                        <div id="lesson__status">10:00</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: none;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z">
+                                            </path>
+                                        </svg>
+                
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li class="lesson__detail" style="display: flex;">
+                
+                                
+                                        <a href="session.html?id=6364d4eef059641530105022&amp;title=js-20-lib" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                                            <div class="lesson__detail-number"></div>
+                                            <div class="lesson__detail-text">کار با لایبرری owljs</div>
+                                        </a>
+                                    
+                
+                                <div class="lesson__detail-status">
+                                    <div class="lesson__detail-duration">
+                                        <div id="lesson__status">20:00</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: none;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z">
+                                            </path>
+                                        </svg>
+                
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li class="lesson__detail" style="display: flex;">
+                
+                                
+                                        <div onclick="showModal()" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                                            <div class="lesson__detail-number"></div>
+                                            <div class="lesson__detail-text">کار با لایبرری jquery</div>
+                                        </div>
+                                    
+                
+                                <div class="lesson__detail-status">
+                                    <div class="lesson__detail-duration">
+                                        <div id="lesson__status">11:00</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: none;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z">
+                                            </path>
+                                        </svg>
+                
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li class="lesson__detail" style="display: flex;">
+                
+                                
+                                        <a href="session.html?id=636505210e9c71df7814546f&amp;title=js-20-lib" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                                            <div class="lesson__detail-number"></div>
+                                            <div class="lesson__detail-text">کار با کتابخونه Redux</div>
+                                        </a>
+                                    
+                
+                                <div class="lesson__detail-status">
+                                    <div class="lesson__detail-duration">
+                                        <div id="lesson__status">18:12</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="transform: none;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z">
+                                            </path>
+                                        </svg>
+                
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- finish course video -->
+
+
+            <!-- Start couurse content -->
+            <div class="course__content">
+                <div class="course__details">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12 course__details-right">
+                            <div class="course__details">
+                                <div class="row">
+                                    <div class="col-12 col-md-12  course__details-left course__details-left--helper">
+                                        <div class="course__users-wrapper">
+                                            <div class="course__users">
+                                                <div class="infos infos--left">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                                    </svg>
+                                                    <div>
+                                                        <div id="users__count">12:20</div>
+                                                        <div>زمان دوره</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infos infos--left">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        data-slot="icon" class="w-6 h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                                    </svg>
+                                                    <div>
+                                                        <div id="course__s">۲۳۳</div>
+                                                        <div>جلسات دوره</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="course__complete-percent row">
+                                                <p>میزان پیشرفت شما</p>
+                                                <p id="course__percent">۱۰۰٪</p>
+                                            </div>
+                                            <div class="course__compelete-line"></div>
+                                        </div>
+                                        <div class="course__teacher">
+                                            <div class="course__teacher-wrapper">
+                                                <div class="course__teacher-image">
+                                                    <img src="img/aghay rad.png" alt="aghay rad">
+                                                </div>
+                                                <div class="course__teacher-name">
+                                                    محمد امین سعیدی راد
+                                                    <p>FullStack Developer</p>
+                                                </div>
+                                            </div>
+                                            <div class="course__teacher-profile">
+                                                <p>مدرس دوره</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- start course comments -->
+                                    <div class="col-12">
+                                        <div class="course__comments-wrapper">
+                                            <div class="course__topic">
+                                                <div class="course__topic-wrapper">
+                                                    <h4 class="idn idn--comment">پرسش و پاسخ</h4>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="add__new-comment">
+                                                <div class="course__new-comment">
+                                                    <img src="img/footer-user-img.png"
+                                                        class="user__commetn-profile-img"></img>
+                                                    <div class="course__new-comment-wrapper">
+                                                        <div id="newCommentUserName"></div>
+                                                        <div>پرسش جدید</div>
+                                                    </div>
+                                                </div>
+                                                <textarea class="add__comment-area" cols="20" rows="5"></textarea>
+                                                <div class="new__comment-buttons">
+                                                    <div class="main__buttons-Wrappper">
+                                                        <button class="add__comment">ثبت</button>
+                                                    </div>
+                                                    <button class="add__file">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                            data-slot="icon" class="w-6 h-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                                                        </svg>
+                                                        <sapn>پیوست</sapn>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- finish course comments -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 course__details-left course__details-left--xl">
+                            <div class="course__users-wrapper">
+                                <div class="course__users">
+                                    <div class="infos infos--left">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                            class="w-6 h-6">
+                                            <path
+                                                d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z">
+                                            </path>
+                                        </svg>
+                                        <div>
+                                            <div id="users__count">12:20</div>
+                                            <div>زمان دوره</div>
+                                        </div>
+                                    </div>
+                                    <div class="infos infos--left">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" data-slot="icon" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                        </svg>
+                                        <div>
+                                            <div id="course__s">۲۳۳</div>
+                                            <div>جلسات دوره</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course__complete-percent row">
+                                    <p>میزان پیشرفت شما</p>
+                                    <p id="course__percent">۱۰۰٪</p>
+                                </div>
+                                <div class="course__compelete-line"></div>
+                            </div>
+                            <div class="course__teacher">
+                                <div class="course__teacher-wrapper">
+                                    <div class="course__teacher-image">
+                                        <img src="img/aghay rad.png" alt="aghay rad">
+                                    </div>
+                                    <div class="course__teacher-name">
+                                        محمد امین سعیدی راد
+                                        <p>FullStack Developer</p>
+                                    </div>
+                                </div>
+                                <div class="course__teacher-profile">
+                                    <p>مدرس دوره</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Finish couurse content -->
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer__body">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                        <h3 class="footer__topics">درباره ما</h3>
+                        <p class="footer__links">سبزلرن یک اکادمی خصوصی آموزش برنامه نویسی هست که با هدف تحویل نیروی
+                            متخصص بر پایه تولید محتوای غیرسطحی فعالیت میکند</p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                        <h3 class="footer__topics">دسترسی سریع</h3>
+                        <ul class="footer__links">
+                            <li><a href="#">قوانین و مقررات</a></li>
+                            <li><a href="#">ارسال تیکت</a></li>
+                            <li><a href="#">همه دوره ها</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                        <h3 class="footer__topics">لینک های مفید</h3>
+                        <ul class="footer__links">
+                            <li><a href="#">اموزی جاوا اسکریپت</a></li>
+                            <li><a href="#">اموزش پایتون</a></li>
+                            <li><a href="#">اموزش HTML</a></li>
+                            <li><a href="#">اموزش CSS</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                        <div class="footer__links-wrapper">
+                            <h3 class="footer__topics">شبکه های اجتماعی</h3>
+                            <ul>
+                                <li class="instagram__link">
+                                    <a>@llibanogs.so (just kidding)</a>
+                                    <img src="img/icons8-instagram.svg" alt="instagram">
+                                </li>
+                                <li class="telegram__link">
+                                    <a>@llibanogs.so (just kidding)</a>
+                                    <img src="img/Telegram_logo.svg" alt="telegram">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copy-right">
+                <p>ساخته شده با فشار ❤️ توسط llibanogs.so@</p>
+                <p>Copyright © 2019-2023 Sabzlearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/topic.js"></script>
+    <script type="module" src="js/session.js"></script>
+</body>
+
+</html>

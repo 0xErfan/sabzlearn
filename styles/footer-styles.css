@@ -1,0 +1,68 @@
+/* Start footer styles */
+
+footer {
+    background-color: var(--pure-white);
+    text-align: center;
+}
+
+.footer__body {
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.footer__topics {
+    color: var(--topic-texts-color);
+}
+
+.footer__links-wrapper {
+    direction: ltr;
+    text-align: right;
+}
+
+.footer__links li,
+.footer__links {
+    color: var(--p-colors);
+    margin-bottom: 1rem;
+}
+
+.footer__links li a,
+.footer__links {
+    transition: all 0.3s ease;
+    font-size: 1.9rem;
+}
+
+
+.telegram__link {
+    margin-right: .6rem;
+}
+
+.instagram__link,
+.telegram__link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    color: var(--p-colors);
+}
+
+.instagram__link a,
+.telegram__link a {
+    transition: all 0.3s ease;
+}
+
+.telegram__link img {
+    width: 4rem;
+}
+
+.footer__copy-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--p-colors);
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer__copy-right p:last-child {
+    direction: ltr;
+}
+/* Finish footer styles */

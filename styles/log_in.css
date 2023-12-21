@@ -1,0 +1,109 @@
+@import url("../styles/vendor/llibanogs.modal/modal.css");
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: auto;
+}
+
+input {
+    padding: 1.5rem 2rem 1.5rem 0;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    color: var(--p-colors);
+    width: 100%;
+    z-index: 4;
+}
+
+input::placeholder {
+    color: inherit;
+}
+
+svg {
+    margin-left: 1rem;
+    stroke: var(--p-colors);
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.signin__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    color: var(--topic-texts-color);
+}
+
+.signin__header img {
+    width: 10rem;
+    height: 7rem;
+}
+
+.login__link {
+    color: var(--cost-color);
+    margin-right: 0.5rem;
+}
+
+.form__data {
+    background-color: var(--pure-white);
+    padding: 2.5rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    font-size: 1.9rem;
+    max-width: 39.1rem;
+    box-shadow: 0 1.1rem 6rem -2rem #0000003d;
+}
+
+.signin__topic {
+    padding: 1rem 0 2rem 0;
+}
+
+.signin__topic p {
+    font-size: 1.75rem;
+    color: var(--p-colors);
+}
+
+.signin__topic h3 {
+    margin: 0;
+    color: var(--topic-texts-color);
+    font-size: 2.5rem !important;
+}
+
+.signin__body div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    max-width: 100%;
+}
+
+.signin__body div,
+.signin__body div input  {
+    background-color: var(--primary-bg-color)
+}
+
+.signin__footer {
+    margin: 0 auto;
+    padding-top: 3rem;
+    color: var(--p-colors);
+    font-size: 1.8rem;
+}
+
+.signin__footer a {
+    color: var(--cost-color);
+}
+
+.submit__input {
+    width: 100%;
+    background-color: var(--cost-color);
+    color: var(--pure-white);
+    padding: 1.5rem;
+    cursor: pointer;
+}

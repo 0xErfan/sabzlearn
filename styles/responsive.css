@@ -1,0 +1,378 @@
+@media screen and (max-width: 1400px) {
+    .latest__course {
+        max-width: 27rem;
+    }
+
+    .header__search--svg {
+        width: 6rem;
+        height: 6rem;
+        padding: 1.2rem;
+    }
+
+    .header__searhbox--input {
+        display: none;
+    }
+
+    .header__search--svg svg {
+        padding-top: 0;
+    }
+
+    .header__searhbox {
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .latest__course {
+        max-width: 30rem;
+    }
+
+    .log {
+        left: 10rem;
+    }
+
+    header {
+        padding: 3rem 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    .header__courses--list {
+        gap: 3.5rem;
+    }
+
+    .our__help--wrapper {
+        height: 20rem;
+        flex-basis: 35%;
+    }
+
+    .documents__box-text--wrapper {
+        height: 20rem;
+    }
+
+    footer {
+        text-align: right;
+    }
+
+    .infos--left {
+        max-width: 13rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .infos {
+        padding: 1.5rem .9rem;
+    }
+
+    .infos div div:first-child {
+        font-size: 1.6rem;
+    }
+
+    .course__content-btn-cost {
+        margin-top: 4rem;
+    }
+    
+    .infos--left {
+        justify-content: space-evenly;
+        text-align: center;
+    } 
+}
+
+
+@media screen and (max-width: 992px) {
+    .latest__course {
+        max-width: 34rem;
+    }
+
+    .header__courses--list {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+    }
+
+    .user__theme {
+        display: none;
+    }
+
+    .header__search--svg {
+        display: none;
+    }
+
+    .header__logo::after {
+        display: none;
+    }
+
+    .header__searhbox {
+        display: none;
+    }
+
+    .topic__wrapper {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .topic__img {
+        width: 55%;
+    }
+
+    .topic__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .topic__text--title {
+        text-align: center;
+        font-size: 6.2rem;
+        padding: 0 9.2rem;
+        margin: 5rem 0;
+    }
+
+    .topic__text--details {
+        text-align: center;
+    }
+
+
+    .topic__buttons {
+        justify-content: center;
+    }
+
+    .course__content-video {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .course__information .row {
+        flex-direction: column-reverse;
+    }
+
+    .course__link {
+        display: none;
+    }
+
+    .course__details-left--xl {
+        display: none;
+    }
+
+    .infos--left {
+        max-width: 100%;
+    }
+
+    .infos {
+        padding: 1.5rem 1.9rem;
+    }
+
+    .course__details-left--helper {
+        display: block;
+    }
+
+    .course__teacher-wrapper {
+        flex-direction: row;
+        text-align: right;
+    }
+
+    .course__content-video {
+        margin-top: 2rem;
+    };
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .latest__course {
+        max-width: 25.7rem;
+    }
+
+    .topic__text--title {
+        padding: 0;
+    }
+
+    .log,
+    .sign {
+        display: none !important;
+    }
+
+    .regular__user {
+        display: block !important;
+    }
+
+    .our__help--wrapper {
+        height: 14rem;
+        flex-basis: max-content;
+    }
+
+    .documents__box-text--wrapper {
+        height: 22rem;
+    }
+
+    .poster {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .poster__link {
+        margin-top: 1rem;
+        background-color: rgb(255 255 255 / 0.3);
+        color: var(--primary-bg-color);
+    }
+
+    .footer__copy-right p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .infos {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    .course__path {
+        display: none;
+    }
+
+    .course__content {
+        padding-top: 5rem;
+    }
+
+    .course__content-btn-cost {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .course__information {
+        background: var(--pure-white);
+        border-radius: 2rem;
+        padding: 1rem 2rem 0 2rem;
+    }
+
+    .course__content-get {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .course__content-video {
+        width: 100%;
+    }
+
+    .infos--left {
+        flex-direction: row;
+    }
+
+    body::-webkit-scrollbar {
+        width: auto;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+        background-color: #b9b9b9;
+    }
+    
+    .category__sorter-items {
+        display: none;
+    }
+
+    .user__comment-profile,
+    .user__comment-text-topic {
+        display: none;
+    }
+
+    .user__comment-topic-mobile {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .latest__course {
+        max-width: 100%;
+    }
+
+    .container {
+        width: 88%;
+    }
+
+    .latest__courses--wrapper {
+        justify-content: center;
+    }
+
+    .latest__courses--wrapper--edited {
+        justify-content: flex-start;
+    }
+
+    .latest__courses--title {
+        display: block;
+    }
+
+    .all__courses {
+        justify-content: end;
+        float: left;
+    }
+
+    .topic__img {
+        width: 70%;
+    }
+
+    .all__courses {
+        float: none;
+    }
+
+    .topic__buttons a {
+        padding: 1.5rem 2.1rem;
+    }
+
+    .topic__text--details {
+        font-size: 2rem
+    }
+
+    .our__help--wrapper {
+        height: auto;
+    }
+
+    .new__courses new-course {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .documents__box-text--wrapper {
+        height: 14rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        width: 98%;
+    }
+
+    .topic__img {
+        width: 100%;
+    }
+
+    .our__help--wrapper {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        padding-top: 3rem;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 405px) {
+    .topic__text--title {
+        font-size: 5.2rem;
+        margin: 4rem 0;
+    }
+
+    .topic__buttons {
+        flex-wrap: wrap;
+    }
+
+    .fullWidth {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 278px) {
+    header {
+        padding: 3rem 0;
+    }
+}

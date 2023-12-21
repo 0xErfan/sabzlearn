@@ -1,0 +1,7 @@
+1.swiper buttons fix,
+2.mobile menu course arrows fix.
+3.shadow for the oveflowed texts.
+4.onclick assuse of course links.
+5.arrows down togheder in course topics.
+6.change search border colors.
+7.answer to comments assuse.

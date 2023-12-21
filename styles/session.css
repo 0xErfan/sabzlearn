@@ -1,0 +1,172 @@
+@import url("../styles/footer-styles.css");
+@import url("../styles/normalize.css");
+@import url("../styles/site-topic.css");
+@import url("../styles/vendor/llibanogs.modal/modal.css");
+@import url("../styles/course.css");
+
+.course__video-wrapper {
+    height: auto !important;
+}
+
+.infos {
+    padding: 1.5rem;
+}
+
+.add__new-comment {
+    display: block;
+}
+
+.add__file {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--topic-texts-color);
+    background-color: var(--user-comment);
+}
+
+.new__comment-buttons {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.course__exps h4 {
+    font-size: 2.5rem;
+}
+
+.course__video-wrapper {
+    border-radius: 2rem;
+    padding: 2.5rem;
+    background-color: var(--pure-white);
+    height: 61rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.course__content-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 2rem;
+}
+ 
+.idn--comment {
+    font-size: 2.9rem;
+}
+
+.session__title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#session__number {
+    border-left: 0.1rem solid rgba(255, 255, 255, 0.08);
+    padding-left: 1rem;
+    color: var(--topic-texts-color);
+}
+
+#session__title {
+    color: var(--topic-texts-color);
+    font-size: 2rem;
+}
+
+.session__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.session__title-wrapper {
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1rem;
+}
+
+#session__download-link,
+.session__buttons button {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-direction: row-reverse;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background-color: var(--cost-color);
+    color: var(--topic-texts-color);
+}
+
+.session__buttons button {
+    background-color: var(--user-comment);
+}
+
+.course__video-wrapper {
+    word-spacing: 0.2rem;
+}
+
+.session__lessons {
+    background: var(--pure-white);
+    border-radius: 2rem;
+}
+
+.lesson {
+    background-color: var(--user-comment);
+}
+
+.lesson__detail-number {
+    background-color: var(--user-comment);
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.6rem;
+    color: var(--topic-texts-color) !important;
+}
+
+.lesson__detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--pure-white);
+    display: flex;
+}
+
+.lesson__detail-wrapper {
+    padding: 2rem;
+}
+
+.sessions__wrapper {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+}
+
+.sessions__wrapper--show {
+    visibility: visible;
+    height: auto;
+}
+
+.lesson__detail-duration svg {
+    transition: none;
+}
+
+.sessions__container {
+    background: var(--user-comment);
+    border-radius: 2rem;
+    max-height: 68rem;
+    height: 100%;
+    overflow: auto;
+}
+
+.main__buttons-Wrappper,
+.add__comment {
+    max-width: 11rem;
+    width: 100%;
+}

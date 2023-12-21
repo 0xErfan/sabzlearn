@@ -1,0 +1,51 @@
+.form__modal {
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    left: -32rem;
+    top: 1.5rem;
+    background-color: var(--pure-white);
+    font-size: 1.8rem;
+    max-width:32rem;
+    box-shadow: 0 1.1rem 4rem -2rem #0000003d;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    word-spacing: .2rem;
+    text-align: right;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.form__status--msg {
+    color: var(--topic-texts-color);
+}
+
+.form__details-msg {
+    color: var(--p-colors);
+}
+
+.form__svg {
+    display: flex;
+    align-items: center;
+    padding: 0 .7rem;
+}
+
+.form__svg svg {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--pink);
+    padding: .5rem;
+    border-radius: 4rem;
+    stroke: var(--pure-white);
+}
+
+.form__linetime {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--pink);
+    width: 100%;
+    height: .4rem;
+    border-radius: 5rem;
+}
