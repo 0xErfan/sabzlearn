@@ -32,6 +32,12 @@ main svg {
     color: var(--p-colors);
 }
 
+.course_path-home {
+    width: 5rem;
+    height: 3.5rem;
+    cursor: pointer;
+}
+
 .course__path * {
     margin: .8rem;
     position: relative;
@@ -508,7 +514,7 @@ svg::after {
 }
 
 .lesson__detail-number {
-    background-color: var(--primary-product-color);
+    background-color: var(--pure-white);
     width: 3.5rem;
     height: 3.5rem;
     display: flex;

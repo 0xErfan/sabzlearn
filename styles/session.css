@@ -160,8 +160,7 @@
 .sessions__container {
     background: var(--user-comment);
     border-radius: 2rem;
-    max-height: 68rem;
-    height: 100%;
+    height: 60rem;
     overflow: auto;
 }
 

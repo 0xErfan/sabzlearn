@@ -272,10 +272,11 @@ header {
 .user__theme svg {
     color: var(--p-colors);
     padding: .3rem;
+    transition: all 0.3s ease;
 }
 
-.user__theme:hover {
-    background-color: #bbbbbb8c;
+.user__theme:hover.user__theme svg {
+    color: var(--change-theme);
 }
 
 .header__searhbox,
@@ -299,6 +300,10 @@ header {
     width: 3rem;
     color: var(--p-colors);
 }
+
+.header__search--svgmenu:hover {
+    width: 4rem !important;
+} 
 
 .header__search--svgmenu svg {
     margin-top: .6rem;

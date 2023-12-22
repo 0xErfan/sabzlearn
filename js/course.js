@@ -1,4 +1,4 @@
-import { getUserTokens, getAllUserData, getWantedToken, getURLValues } from "./utilities.js";
+import { getAllUserData, getWantedToken, getURLValues, isUesrRegistered } from "./utilities.js";
 import { modalCall } from "./modal-call.js";
 
 const $ = document
@@ -20,13 +20,17 @@ const formattedDate = `${new Date().getFullYear()}/${(new Date().getMonth() + 1)
 const commentsWrapper = $.querySelector(".course__comments-wrapper")
 const copyCourseLink = $.querySelector("#copy__course-link")
 let appendRepComment = $.querySelector(".add__new-comment-replay")
+let allLessonsWrapper = $.querySelector(".lessons__wrapper")
 let userInfos, topicElem, isExpanded;
 
 const getCourseDetails = () => {
 
-    let getLocationName = (location.href).slice((location.href).indexOf("name=")).slice(5)
+    if (!getURLValues("name")) {
+        location.href = "index.html"
+        return;
+    }
 
-    fetch(`http://localhost:4000/v1/courses/${getLocationName}`, {
+    fetch(`http://localhost:4000/v1/courses/${getURLValues("name")}`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${getWantedToken("logInT")}`
@@ -35,7 +39,9 @@ const getCourseDetails = () => {
     .then(res => res.json())
     .then(data => {
         setCourseDetails(data);
-        console.log(data);
+        $.querySelector(".course__content-get").addEventListener("click", () => {
+            data.isUserRegisteredToThisCourse ? allLessonsWrapper.scrollIntoView({ behavior: "smooth" }) : registerUserToCourse(data)
+        })
         getCourseComments(data.comments)
         getCourseSessions(data.sessions)
     })
@@ -62,10 +68,24 @@ const setCourseDetails = data => {
     }
 }
 
-const registerUserToCourse = () => {
-    $.querySelector(".course__content-get p").innerHTML = "مشاهده دوره"
-    $.querySelector(".course__content-get").style.backgroundColor = "var(--blue)"
-    modalCall("ثبت نام انجام شد(:", 1)
+const registerUserToCourse = data => {
+    let coursePrice = {price: data.price}
+    fetch(`http://localhost:4000/v1/courses/${data._id}/register`, {
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+            Authorization: `Bearer ${getWantedToken("logInT")}`
+        },
+        body: JSON.stringify(coursePrice)
+    })
+    .then(res => res.json())
+    .then(() => {
+        $.querySelector(".course__content-get p").innerHTML = "مشاهده دوره"
+        $.querySelector(".course__content-get").style.backgroundColor = "var(--blue)"
+        modalCall("ثبت نام انجام شد(:", 1)
+        
+        setTimeout(() => location.reload(), 1000);
+    })
 }
 
 const showCourseLessons = e => {
@@ -266,7 +286,6 @@ commentReplayBtn.map(el => el.addEventListener("click", async comment => {
 }))
 
 addCommentBtn.addEventListener("click", async () => {
-    //checks user login
     if (!getWantedToken("logInT")) {
         modalCall("لطفا ابتدا وارد سایت شوید", 0)
         return
@@ -308,103 +327,66 @@ commentsWrapper.addEventListener("click", async e => {
 })
 
 const getCourseSessions = sessions => {
-    let sessionsWrapper = $.querySelector(".lesson")
-    if (sessions.length) {
-        sessions.forEach((sess, ind) => {
-            console.log(sess);  
-            sessionsWrapper.insertAdjacentHTML("beforeend", `
-                <div class="lesson__detail">
-                    ${
-                        sess.free ?
-                        `
-                        <a href=session.html?id=${sess._id}&title=${getURLValues("name")} class="lesson__detail-wrapper" id="${sess._id}">
-                            <div class="lesson__detail-number">${ind + 1}</div>
-                            <div class="lesson__detail-text">${sess.title}</div>
-                        </a>
-                        `
-                        :
-                        `
-                        <div class="lesson__detail-wrapper">
-                            <div class="lesson__detail-number">${ind + 1}</div>
-                            <div class="lesson__detail-text">${sess.title}</div>
-                        </div>
-                        `
-                    }
-                    <div class="lesson__detail-status">
-                        <div class="lesson__detail-cost">${sess.free ? "جلسه رایگان" : "جلسه پولی"}</div>
-                        <div class="lesson__detail-duration">
-                            <p id="lesson__status">${sess.time}</p>
-                            ${
-                                sess.free ?  
-                                    `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"></path>
-                                    </svg>`
-                                :
-                                `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" data-slot="icon" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
-                                </svg>
-                              `
-                            }
 
+    isUesrRegistered()
+    .then(data => {
+        let sessionsWrapper = $.querySelector(".lesson")
+        let userCondition = data.isUserRegisteredToThisCourse
+        if (sessions.length) {
+            sessions.forEach((sess, ind) => {
+                console.log(sess);  
+                sessionsWrapper.insertAdjacentHTML("beforeend", `
+                    <div class="lesson__detail">
+                        ${
+                            sess.free || userCondition ?
+                            `
+                            <a href=session.html?id=${sess._id}&title=${getURLValues("name")} class="lesson__detail-wrapper" id="${sess._id}">
+                                <div class="lesson__detail-number">${ind + 1}</div>
+                                <div class="lesson__detail-text">${sess.title}</div>
+                            </a>
+                            `
+                            :
+                            `
+                            <div class="lesson__detail-wrapper">
+                                <div class="lesson__detail-number">${ind + 1}</div>
+                                <div class="lesson__detail-text">${sess.title}</div>
+                            </div>
+                            `
+                        }
+                        <div class="lesson__detail-status">
+                            <div class="lesson__detail-cost">${sess.free ? "جلسه رایگان" : "جلسه پولی"}</div>
+                            <div class="lesson__detail-duration">
+                                <p id="lesson__status">${sess.time}</p>
+                                ${
+                                    sess.free || userCondition ?  
+                                        `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"></path>
+                                        </svg>`
+                                    :
+                                    `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" data-slot="icon" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                    </svg>
+                                  `
+                                }
+    
+                            </div>
                         </div>
                     </div>
-                </div>
+                `)
+            })
+        } else {
+            sessionsWrapper.innerHTML = ""
+            sessionsWrapper.insertAdjacentHTML("beforeend", `
+                <h3 style="color: var(--p-colors); padding: 2rem; font-size: 2.5rem;width: 100%;display: flex;align-items: center;justify-content: center;">تا کنون جلسه ای بازگزاری نشده!</h3>
             `)
-        })
-    } else {
-        sessionsWrapper.innerHTML = ""
-        sessionsWrapper.insertAdjacentHTML("beforeend", `
-            <h3 style="color: var(--p-colors); padding: 2rem; font-size: 2.5rem;width: 100%;display: flex;align-items: center;justify-content: center;">تا کنون جلسه ای بازگزاری نشده!</h3>
-        `)
-    }
+        }
+    })
+
+    
+
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const getCourseComments = comments => {
     let commentsArray = [...comments]
@@ -558,7 +540,6 @@ cancelComment.addEventListener("click", () => showNewCommentTemplate.style.displ
 cancelReplay.addEventListener("click", () => appendRepComment.style.display = "none")
 seeMoreBtn.addEventListener("click", () => seeAllExp())
 lessonsWrapper.forEach(topic => topic.addEventListener("click", e => showCourseLessons(e)))
-$.querySelector(".course__content-get").addEventListener("click", () => registerUserToCourse())
 
 window.addEventListener("load", () => {
     getCourseDetails()

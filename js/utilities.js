@@ -66,6 +66,7 @@ const changeToDark = () => {
     $.documentElement.style.setProperty("--lessons-color", "#0000009e")
     $.documentElement.style.setProperty("--user-comment", "#32334D")
     $.documentElement.style.setProperty("--comment-ans", "#4A4B6D")
+    $.documentElement.style.setProperty("--change-theme", "")
 
 
     $.querySelector(".change__theme-btn") ? $.querySelector(".change__theme-btn").children[0].innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>` : null
@@ -74,7 +75,7 @@ const changeToDark = () => {
     $.querySelector("#header") ? $.querySelector("#header").style.cssText = "background-color: inherit; border-bottom: .1rem solid #94a3b83b" : null
     $.querySelector('.topic__text--details') ? $.querySelector('.topic__text--details').style.color = "var(--topic-texts-color)" : null
     $.querySelector(".header__useracount") ? Array.from($.querySelector(".header__useracount").children).splice(-2, 3).forEach(child => {
-        child.style.border = ".1rem solid #90939780"
+        child.style.border = ".1rem solid var(--pure-white)"
     }) : null;
     
     localStorage.setItem("userTheme", "dark")
@@ -96,6 +97,7 @@ const changeToLight = () => {
     $.documentElement.style.setProperty("--lessons-color", "#33363c4d")
     $.documentElement.style.setProperty("--user-comment", "#F3F4F6")
     $.documentElement.style.setProperty("--comment-ans", "#E5E7EB")
+    $.documentElement.style.setProperty("--change-theme", "#0EA5E9")
 
     if ($.querySelector("#header")) {
         $.querySelector("#header").style.cssText = "background-color: inherit; border-bottom: .1rem solid #94a3b83b"
@@ -161,6 +163,23 @@ const getAllUserData = () => {
     })
 }
 
+const isUesrRegistered = async () => {
+
+    let response = await fetch(`http://localhost:4000/v1/courses/${getURLValues("name")}`, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${getWantedToken("logInT")}`
+        },
+    })
+
+    if (response.ok) {
+        let data = await response.json()
+        return data
+    } else {
+        return new Error("course not found")
+    }
+}
+
 export {
     isLoginF,
     setUserInfo,
@@ -174,4 +193,5 @@ export {
     getWantedToken,
     searchTheWord,
     getAllUserData,
+    isUesrRegistered,
 }
