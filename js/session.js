@@ -1,24 +1,33 @@
 import { modalCall } from "./modal-call.js";
 import { getURLValues, getWantedToken, getAllUserData } from "./utilities.js";
 const $ = document;
+let quesValue = $.querySelector(".add__comment-area")
+let userData;
 
+const getSessionDetails = async () => {
+    if (!getURLValues("id") || !getURLValues("title")) {
+        location.href = "index.html"
+        return;
+    }
 
+    try {
+        let response = await fetch(`http://localhost:4000/v1/courses/${getURLValues("title")}/${getURLValues("id")}`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${getWantedToken("logInT")}`
+            }
+        })
 
-
-const getSessionDetails = () => {
-    fetch(`http://localhost:4000/v1/courses/${getURLValues("title")}/${getURLValues("id")}`, {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${getWantedToken("logInT")}`
+        if (!response.ok) {
+            throw new Error("course not found")
+        } else {
+            let data = await response.json()
+            setSessionDetails(data.session, data.sessions)
+            appendOtherSessions(data.sessions)
         }
-    })
-    .then(res => {
-        if (res.ok) return res.json()
-    })
-    .then(data => {
-        setSessionDetails(data.session, data.sessions)
-        appendOtherSessions(data.sessions)
-    })
+    } catch(err) {
+        modalCall(err)
+    }
 }
 
 const setSessionDetails = async (session, sessions) => {
@@ -54,7 +63,7 @@ const setSessionDetails = async (session, sessions) => {
         min = min < 10 ? `0${min}` : min
 
         let getLength = sessions.findIndex(mems => mems._id == session._id)
-        getAllUserData().then(res => res.json()).then(data => $.querySelector("#newCommentUserName").innerHTML = data.username)
+        getAllUserData().then(res => res.json()).then(data => {$.querySelector("#newCommentUserName").innerHTML = data.username, userData = data})
         $.querySelector("#course-path-name").innerHTML = data.name
         $.querySelector(".idn--comment").innerHTML = data.name
         $.querySelector("#session__title").innerHTML = session.title
@@ -81,7 +90,7 @@ const appendOtherSessions = sessions => {
                 </svg>
             </div>
 
-            <ul class="sessions__wrapper">
+            <ul class="sessions__wrapper sessions__wrapper--show">
 
             </ul>
         </div>
@@ -92,14 +101,14 @@ const appendOtherSessions = sessions => {
 
                 ${
                     sess.free ? `
-                        <a href="session.html?id=${sess._id}&title=${getURLValues("title")}" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                        <a href="session.html?id=${sess._id}&title=${getURLValues("title")}" class="lesson__detail-wrapper" id="${sess._id}">
                             <div class="lesson__detail-number"></div>
                             <div class="lesson__detail-text">${sess.title}</div>
                         </a>
                     `
                     :
                     `
-                        <div onclick="showModal()" class="lesson__detail-wrapper" id="636252530fda8658687d581c">
+                        <div onclick="showModal()" class="lesson__detail-wrapper" id="${sess._id}">
                             <div class="lesson__detail-number"></div>
                             <div class="lesson__detail-text">${sess.title}</div>
                         </div>
@@ -125,6 +134,15 @@ const appendOtherSessions = sessions => {
         `)
     })
 
+
+    let lessonNumbers = Array.from($.querySelectorAll(".lesson__detail-number"))
+    lessonNumbers.some(el => {
+        if (el.parentElement.id == getURLValues("id")) {
+            el.classList.add("lesson__detail-number--active")
+            return true;
+        }
+    })
+
     let sessionLeaders = Array.from($.querySelectorAll(".lesson__topic-wrapper"))
     sessionLeaders.forEach(ul => {
         ul.addEventListener("click", () => {
@@ -138,6 +156,53 @@ const appendOtherSessions = sessions => {
     })
 }
 
+const addNewComment = (text) => {
+    let formattedDate = `${new Date().getFullYear()}/${(new Date().getMonth() + 1).toString().padStart(2, '0')}/${new Date().getDate().toString().padStart(2, '0')}`
+    text = text.replace(/\n/g, "<br>")
+
+    if (!text.trim()) {
+        modalCall("ابتدا فیلد را پر کن دا", 0)
+        return;
+    }
+
+    let getTarget = $.querySelector(".course__comments-wrapper")
+
+    getTarget.insertAdjacentHTML("beforeend", `
+    <div class="user__comment-wrapper user__comment-wrapper--ans">
+    <div class="user__comment-profile">
+        <img src="img/footer-user-img.png" class="user__commetn-profile-img">
+        <div class="user__comment-role">${userData.role == "USER" ? "کاربر" : "ادمین"}</div>
+    </div>
+    <div class="user__comment-content">
+        <div class="user__comment-text-topic">
+            <div class="user__comment-name">
+                <p>${userData.name}</p>
+                <p>${formattedDate}</p>
+            </div>
+        </div>
+        <div class="user__comment-topic-mobile">
+            <div class="user__comment-topic-wrapper">
+                <img src="img/footer-user-img.png" class="user__commetn-profile-img">
+                <div class="user__comment-profile-mobile">
+                    <p>${userData.name}</p>
+                    <div class="user__comment-role-mobile">
+                        <p>${userData.role == "USER" ? "کاربر" : "ادمین"}</p>
+                        <p>${formattedDate}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user__comment-text">
+            ${text}
+        </div>
+    </div>
+</div>
+`)
+quesValue.value = ""
+modalCall("پرسش شما ثبت شد!", 1)
+}
+
+$.querySelector(".add__comment").addEventListener("click", () => addNewComment(quesValue.value))
 const showModal = () => modalCall('این قسمت دوره پولی است ابتدا دوره را خریداری کنید(؛', 0)
 window.showModal = showModal
 

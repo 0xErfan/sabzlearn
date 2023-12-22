@@ -170,3 +170,7 @@
     max-width: 11rem;
     width: 100%;
 }
+
+.lesson__detail-number--active {
+    background-color: var(--cost-color);
+}
