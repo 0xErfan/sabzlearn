@@ -28,9 +28,6 @@ const getCourseDetails = () => {
     if (!getURLValues("name")) {
         location.href = "index.html"
         return;
-    } else if (!getWantedToken("logInT").length) {
-        modalCall("برای دسترسی به اطلاعات دوره ابتدا وارد حساب خود شوید!", 0)
-        return;
     }
 
     fetch(`http://localhost:4000/v1/courses/${getURLValues("name")}`, {

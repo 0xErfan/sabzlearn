@@ -1,9 +1,18 @@
-import { getAllCourses } from "./utilities.js";
+import { getAllCourses, getWantedToken } from "./utilities.js";
 import { LatestCourses } from "../components/latest-course/latest-course.js"
 import { NewCourses } from "../components/new-courses/new-courses.js"
 import { modalCall } from "./modal-call.js";
 let allArticles = Array.from(document.querySelectorAll(".documents__box-link"))
 
+
+
+const gotoCourse = path => {
+    if (!getWantedToken("logInT").length) {
+        modalCall("برای دسترسی به اطلاعات دوره ابتدا وارد حساب خود شوید!", 0)
+        return;
+    }
+    location.href = `course.html?name=${path}`
+}
 
 const renderMainCourses = () => {
     const latestCoursesWrapper = $.querySelector('.latest__courses--wrapper')
@@ -85,6 +94,7 @@ window.addEventListener("load", () => {
 
 allArticles.forEach(el => el.addEventListener("click", () => modalCall("مقاله خوانده شد😙", 1)))
 Array.from(document.querySelectorAll(".all__courses")).map(el => el.innerHTML.includes("دوره ها") ? el.addEventListener("click", () => el.href = "/category.html?all=allCourses") : null)
+window.gotoCourse = gotoCourse
 window.customElements.define("latest-course", LatestCourses)
 window.customElements.define("new-course", NewCourses)
 
