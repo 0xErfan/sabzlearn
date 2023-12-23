@@ -12,9 +12,13 @@
     padding: 1.5rem;
     word-spacing: .2rem;
     text-align: right;
-    z-index: 2;
+    z-index: 1000;
     opacity: 0;
     transition: all 0.3s ease;
+}
+
+.form__modal * {
+    z-index: 1000;
 }
 
 .form__status--msg {
