@@ -2,6 +2,7 @@
 @import url("../styles/footer-styles.css");
 @import url("../styles/site-topic.css");
 @import url("../styles/vendor/llibanogs.modal/modal.css");
+@import url("../styles/vendor/swiper/swiper.css");
 .show {
     display: block;
 }
