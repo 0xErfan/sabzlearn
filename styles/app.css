@@ -466,6 +466,7 @@
     border-top: .1rem solid rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     color: var(--topic-texts-color);
+    cursor: pointer;
 }
 
 .documents__box-link:hover {
