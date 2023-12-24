@@ -2,6 +2,8 @@
 @import url("../styles/footer-styles.css");
 @import url("../styles/site-topic.css");
 @import url("../styles/vendor/llibanogs.modal/modal.css");
+@import url("../styles/vendor/swiper/swiper.css");
+
 .show {
     display: block;
 }
@@ -336,7 +338,7 @@
 }
 
 .control__btns {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 1rem;
 }
@@ -348,17 +350,6 @@
     border-radius: 100%;
     padding: .8rem;
     cursor: pointer;
-}
-
-.latest__courses--wrapper--edited {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    transition: all 0.3s ease;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    gap: 0rem !important;
-    justify-content: flex-start;
 }
 
 .latest__courses--wrapper--edited new-course {

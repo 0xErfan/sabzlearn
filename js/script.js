@@ -3,7 +3,7 @@ import { LatestCourses } from "../components/latest-course/latest-course.js"
 import { NewCourses } from "../components/new-courses/new-courses.js"
 import { modalCall } from "./modal-call.js";
 let allArticles = Array.from(document.querySelectorAll(".documents__box-link"))
-
+const $ = document
 
 
 const gotoCourse = path => {
@@ -65,22 +65,24 @@ const getRoadmapsCount = () => {
 
 const getSwiperCourses = () => {
 
-    let latestCoursesWrapper = $.querySelector(".latest__courses--wrapper--edited")
+    let latestCoursesWrapper = $.querySelector(".mySwiper")
     getAllCourses()
         .then(courses => {
             courses.slice(1, 9).forEach(course => {
                 let courseId = course.categoryID.includes("فرانت") ? "فرانت اند" : course.categoryID.includes("بک‌اند") ? "بک اند" : "پایتون"
                 latestCoursesWrapper.insertAdjacentHTML("beforeend", `
-            <new-course img-src="http://localhost:4000/courses/covers/${course.cover}" class="col-12 col-md-6 col-xl-4">
-                <div slot="basin">${courseId}</div>
-                <div onclick="gotoCourse('${course.shortName}')" slot="title">${course.name}</div>
-                <div class="latest__course-details" slot="details">مینی پروژه‌های کاربری با PHP یه دوره آموزشی گام به گام هست که برای توسعه‌دهندگان وب، به ویژه...</div>
-                <div slot="t-name">${course.creator}</div>
-                <div slot="duration">۲۲:۱۰</div>
-                <div slot="users">${course.registers}</div>
-                <div slot="rate">${course.courseAverageScore}.0</div>
-                <div slot="cost">${course.price == 0 ? "رایگان" : course.price.toLocaleString() + " تومان"}</div>
-            </new-course>
+                <swiper-slide>
+                    <new-course img-src="http://localhost:4000/courses/covers/${course.cover}" class="col-12 col-md-6 col-xl-4">
+                        <div slot="basin">${courseId}</div>
+                        <div onclick="gotoCourse('${course.shortName}')" slot="title">${course.name}</div>
+                        <div class="latest__course-details" slot="details">مینی پروژه‌های کاربری با PHP یه دوره آموزشی گام به گام هست که برای توسعه‌دهندگان وب، به ویژه...</div>
+                        <div slot="t-name">${course.creator}</div>
+                        <div slot="duration">۲۲:۱۰</div>
+                        <div slot="users">${course.registers}</div>
+                        <div slot="rate">${course.courseAverageScore}.0</div>
+                        <div slot="cost">${course.price == 0 ? "رایگان" : course.price.toLocaleString() + " تومان"}</div>
+                    </new-course>
+                </swiper-slide>
         `)
             })
         })
