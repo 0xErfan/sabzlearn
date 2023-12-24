@@ -1,5 +1,5 @@
 import { modalCall } from "./modal-call.js";
-import { getURLValues, getWantedToken, getAllUserData } from "./utilities.js";
+import { getURLValues, getWantedToken, getAllUserData, isUesrRegistered } from "./utilities.js";
 const $ = document;
 let quesValue = $.querySelector(".add__comment-area")
 let userData;
@@ -79,7 +79,11 @@ const setSessionDetails = async (session, sessions) => {
 const appendOtherSessions = sessions => {
 
     const sessionsContainer = $.querySelector(".sessions__container")
-    sessionsContainer.insertAdjacentHTML("beforeend", `
+    let userCondition;
+    isUesrRegistered("title")
+    .then(data => {
+        userCondition = data.isUserRegisteredToThisCourse
+        sessionsContainer.insertAdjacentHTML("beforeend", `
         <div class="lesson session__lessons">
             <div class="lesson__topic-wrapper">
                 <p class="lesson__topic">فصل اول</p>
@@ -100,7 +104,7 @@ const appendOtherSessions = sessions => {
             <li class="lesson__detail" style="display: flex;">
 
                 ${
-                    sess.free ? `
+                    sess.free || userCondition ? `
                         <a href="session.html?id=${sess._id}&title=${getURLValues("title")}" class="lesson__detail-wrapper" id="${sess._id}">
                             <div class="lesson__detail-number"></div>
                             <div class="lesson__detail-text">${sess.title}</div>
@@ -153,6 +157,7 @@ const appendOtherSessions = sessions => {
                 ul.querySelector("svg").style.transform = "rotate(0deg)"
             }
         })
+    })
     })
 }
 

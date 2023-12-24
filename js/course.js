@@ -168,30 +168,28 @@ const addNewComment = (text, date, role, type, parent, id = "") => {
             </div>
         `)
 
-        modalCall("نظر شما ثبت شد", 1)
+        let body = {body: text}
 
-        // let body = {body: text}
-
-        // fetch(`http://localhost:4000/v1/comments/answer/${id.trim()}`, {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         Authorization: `Bearer ${getWantedToken("logInT")}`
-        //     },
-        //     body: JSON.stringify(body)
-        // })
-        // .then(res => {
-        //     if (res.status.ok) {
-        //         console.log(res);
-        //         modalCall("نظر شما ثبت شد", 1)
-        //         addCommentValue.value = ""
-        //         addReplatValue.value = ""
-        //         showNewCommentTemplate.style.display = "none"
-        //         appendRepComment.style.display = "none"
-        //         Array.from($.querySelectorAll(".user__comment-content")).map(el => el.classList.remove("comment__target"))
-        //         return res.json()
-        //     }
-        // })
+        fetch(`http://localhost:4000/v1/comments/answer/${id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${getWantedToken("logInT")}`
+            },
+            body: JSON.stringify(body)
+        })
+        .then(res => {
+            if (res.status.ok) {
+                console.log(res);
+                modalCall("نظر شما ثبت شد", 1)
+                addCommentValue.value = ""
+                addReplatValue.value = ""
+                showNewCommentTemplate.style.display = "none"
+                appendRepComment.style.display = "none"
+                Array.from($.querySelectorAll(".user__comment-content")).map(el => el.classList.remove("comment__target"))
+                return res.json()
+            }
+        })
 
 
     } else {
@@ -328,7 +326,7 @@ commentsWrapper.addEventListener("click", async e => {
 
 const getCourseSessions = sessions => {
 
-    isUesrRegistered()
+    isUesrRegistered("name")
     .then(data => {
         let sessionsWrapper = $.querySelector(".lesson")
         let userCondition = data.isUserRegisteredToThisCourse

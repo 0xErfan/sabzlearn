@@ -163,9 +163,9 @@ const getAllUserData = () => {
     })
 }
 
-const isUesrRegistered = async () => {
+const isUesrRegistered = async key => {
 
-    let response = await fetch(`http://localhost:4000/v1/courses/${getURLValues("name")}`, {
+    let response = await fetch(`http://localhost:4000/v1/courses/${getURLValues(key)}`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${getWantedToken("logInT")}`

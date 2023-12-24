@@ -1,4 +1,4 @@
-import { isLoginF } from "./utilities.js"
+import { getAllCourses, isLoginF } from "./utilities.js"
 import { checkUserTheme } from "./utilities.js"
 import { changeTheme } from "./utilities.js"
 import { searchTheWord } from "./utilities.js"
@@ -40,10 +40,10 @@ const getCourses = () => {
 
             if (data[i].submenus.length == 0) {
                 courseTemplate.className = "frontend frontend__edit"
+                let coursePath = (data[i].href).replace("/category-info/", "course.html?name=")
                 courseTemplate.innerHTML = `
-                <a href="course.html?name=${data[i].href}">${data[i].title}</a>
+                <a href="${coursePath}">${data[i].title}</a>
                 <div class="courses__frontend">
-
                 </div>
                 `
             } else {
@@ -64,7 +64,9 @@ const getCourses = () => {
 
                 let courseListTemplate = $.createElement("li")
                 courseListTemplate.className = "front__courses"
-                courseListTemplate.innerHTML = `<a href="${data[i].submenus[j].href}">${data[i].submenus[j].title}</a>`
+                let coursePath = (data[i].submenus[j].href).replace("/course-info/", "course.html?name=")
+
+                courseListTemplate.innerHTML = `<a href="${coursePath}">${data[i].submenus[j].title}</a>`
                 $.querySelector(`#course__items${i}`).append(courseListTemplate)
             }
         }
@@ -74,8 +76,9 @@ const getCourses = () => {
             let courseTemplate = $.createElement("li")
 
             if (data[i].submenus.length == 0) {
+                let coursePath = (data[i].href).replace("/category-info/", "course.html?name=")
                 courseTemplate.innerHTML = `
-                <a class="course__items" href="${data[i].href}">${data[i].title}</a>
+                <a class="course__items" href="${coursePath}">${data[i].title}</a>
             `
             } else {
                 courseTemplate.innerHTML = `
@@ -89,7 +92,9 @@ const getCourses = () => {
             for(let j = 0; j < data[i].submenus.length; j++) {
 
                 let courseListTemplate = $.createElement("div")
-                courseListTemplate.innerHTML = `<div class="courses__link" href="${data[i].submenus[j].href}">${data[i].submenus[j].title}</div>`
+                let courseAddress = (data[i].submenus[j].href).replace("course-info/", "course.html?name=")
+                
+                courseListTemplate.innerHTML = `<div class="courses__link" href="${courseAddress}">${data[i].submenus[j].title}</div>`
                 $.querySelector(`#course__items--wrapper${i}`).append(courseListTemplate)
             }
         }
