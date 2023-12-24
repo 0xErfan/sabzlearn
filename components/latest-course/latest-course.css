@@ -85,6 +85,7 @@
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 0.1rem rgba(0, 0, 0, 10%) solid;
+    height: 4rem;
 }
 
 .latest__course--rate {
