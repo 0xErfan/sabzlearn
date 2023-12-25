@@ -21,7 +21,7 @@ const renderMainCourses = () => {
             courses.slice(1, 9).forEach(course => {
                 let courseId = course.categoryID.includes("فرانت") ? "فرانت اند" : course.categoryID.includes("بک‌اند") ? "بک اند" : "پایتون"
                 latestCoursesWrapper.insertAdjacentHTML("beforeend", `
-                <latest-course img-src="http://localhost:4000/courses/covers/${course.cover}">
+                <latest-course img-src="http://localhost:4000/courses/covers/${course.cover}" class="col-12 col-sm-6 col-lg-4 col-xl-3">
                     <div slot="basin">${courseId}</div>
                     <div onclick="gotoCourse('${course.shortName}')" slot="title">${course.name}</div>
                     <div class="latest__course-details" slot="details">مینی پروژه‌های کاربری با PHP یه دوره آموزشی گام به گام هست که برای توسعه‌دهندگان وب، به ویژه...</div>
@@ -45,7 +45,7 @@ const getRoadmapsCount = () => {
     getAllCourses()
         .then(res => {
             res.forEach(course => {
-                if (course.categoryID.includes("فرانت")) {
+                if (course.categoryID.includes("فرانت") || course.categoryID.includes("بک‌اند")) {
                     frontendRoadsCount += 1
                 } else if (course.categoryID.includes("امنیت")) {
                     securityRoadsCount += 1

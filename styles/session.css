@@ -161,7 +161,8 @@
     background: var(--user-comment);
     border-radius: 2rem;
     height: 60rem;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .main__buttons-Wrappper,

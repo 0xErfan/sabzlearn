@@ -131,7 +131,7 @@ const appendCourses = courses => {
     if (!courses.length) {
         
         latestCoursesWrapper.innerHTML = ""
-        latestCoursesWrapper.insertAdjacentHTML("afterbegin", "<h3 style='color: var(--p-colors);font-size: 2.5rem;width: 100%;display: flex;align-items: center;justify-content: center;'>دوره مورد نظر یافت نشد</h3>")
+        latestCoursesWrapper.insertAdjacentHTML("afterbegin", "<h3 style='color: var(--p-colors);font-size: 2.5rem;width: 100%;display: flex;align-items: center;justify-content: center;'>دوره ای یافت نشد</h3>")
     } else {
         creatCourseTemplte(courses)
     }

@@ -25,66 +25,7 @@
                 <div class="header__logo"><a href="http://127.0.0.1:5500/index.html"><img src="img/logo.webp"
                             title="sabzlearn" alt="sabzlearn"></a></div>
                 <div class="header__courses--list">
-                    <!-- <div class="frontend">
-                        <h4>فرانت اند</h4>
-                        <div class="courses__frontend">
-                            <ul>
-                                <li class="front__courses"><a href="#">اموزش HTML</a></li>
-                                <li class="front__courses"><a href="#">اموزش CSS</a></li>
-                                <li class="front__courses"><a href="#">اموزش Flex box</a></li>
-                                <li class="front__courses"><a href="#">اموزش CSS Grid</a></li>
-                                <li class="front__courses"><a href="#">موزش Tailwind CSS</a></li>
-                                <li class="front__courses"><a href="#">اموزش جامعع ReactJS</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="frontend">
-                        <h4>امنیت</h4>
-                        <div class="courses__frontend">
-                            <ul>
-                                <li class="front__courses"><a href="#">نقشه راه ورود به دنیای هک...</a></li>
-                                <li class="front__courses"><a href="#">شبکه با گرایش امنیت</a></li>
-                                <li class="front__courses"><a href="#">لینوکس با گرایش امنیت</a></li>
-                                <li class="front__courses"><a href="#">اموزش هکر قدرتمند - CEH V11</a></li>
-                                <li class="front__courses"><a href="#">اموزش کالی لینوکس</a></li>
-                                <li class="front__courses"><a href="#">اموزش پایتون سیاه</a></li>
-                                <li class="front__courses"><a href="#">اموزش Burp Suit</a></li>
-                                <li class="front__courses"><a href="#">اموزش جاوا اسکریپت سیاه</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="frontend">
-                        <h4>پایتون</h4>
-                        <div class="courses__frontend">
-                            <ul>
-                                <li class="front__courses"><a href="#">دوره اموزش پایتون</a></li>
-                                <li class="front__courses"><a href="#">پروژه های کاربردی با پایتون</a></li>
-                                <li class="front__courses"><a href="#">ترفند های کاربردی با پایتون</a></li>
-                                <li class="front__courses"><a href="#">متخصص جنکو</a></li>
-                                <li class="front__courses"><a href="#">مصور سازی داده پایتون</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="frontend frontend__edit">
-                        <h4>مهارت های نرم</h4>
-                    </div>
-                    <div class="frontend">
-                        <h4>مقالات</h4>
-                        <div class="courses__frontend">
-                            <ul>
-                                <li class="front__courses"><a href="#">اچ تی ام ال</a></li>
-                                <li class="front__courses"><a href="#">بوت استرپ</a></li>
-                                <li class="front__courses"><a href="#">پروژه های برنامه نویسی</a></li>
-                                <li class="front__courses"><a href="#">تست نفوذ و امنیت وب</a></li>
-                                <li class="front__courses"><a href="#">جی کویری</a></li>
-                                <li class="front__courses"><a href="#">ری اکت جی اس</a></li>
-                                <li class="front__courses"><a href="#">سی اس اس</a></li>
-                                <li class="front__courses"><a href="#">شروع برنامه نویسی</a></li>
-                                <li class="front__courses"><a href="#">طراحی سایت</a></li>
-                                <li class="front__courses"><a href="#">ویو جی اس</a></li>
-                            </ul>
-                        </div>
-                    </div> -->
+                    <!-- load from db -->
                 </div>
             </div>
             <div class="header__useracount">
@@ -137,12 +78,25 @@
                             d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                     </svg></div>
                 <div class="header__searhbox">
-                    <input type="text" class="header__searhbox--input" placeholder="جستجو">
-                    <div class="header__search--svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <input type="text" class="header__searhbox--input" placeholder="جستجو" id="searchBtnXlValue">
+                    <div class="header__search--svg">
+                        <svg class="search__btn" fill="none" id="searchBtnXl"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                        </svg></div>
+                        </svg>
+                        <svg id="searchBtn" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                        <div class="header__searhboxmenu--lg">
+                            <input type="text" id="header__searhbox--inputmenu" class="header__searhbox--inputmenu" placeholder="جستجو">
+                            <div class="header__search--svgmenu" id="searchBtnXll"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+                                </svg></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,8 +110,8 @@
                     </svg></div>
             </div>
             <div class="header__searhboxmenu">
-                <input type="text" class="header__searhbox--inputmenu" placeholder="جستجو">
-                <div class="header__search--svgmenu"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                <input type="text" class="header__searhbox--inputmenu" id="searchBtnLgValue" placeholder="جستجو">
+                <div class="header__search--svgmenu" id="searchBtnLg"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>

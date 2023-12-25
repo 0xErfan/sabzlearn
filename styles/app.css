@@ -179,12 +179,12 @@
     background-color: var(--tomato);
 }
 
-.latest__courses--wrapper {
+/* .latest__courses--wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 1rem;
-}
+} */
 
 .latest__courses-details {
     display: block;

@@ -180,7 +180,6 @@ const addNewComment = (text, date, role, type, parent, id = "") => {
         })
         .then(res => {
             if (res.status.ok) {
-                console.log(res);
                 modalCall("نظر شما ثبت شد", 1)
                 addCommentValue.value = ""
                 addReplatValue.value = ""
@@ -260,10 +259,10 @@ const addNewComment = (text, date, role, type, parent, id = "") => {
                 showNewCommentTemplate.style.display = "none"
                 appendRepComment.style.display = "none"
                 Array.from($.querySelectorAll(".user__comment-content")).map(el => el.classList.remove("comment__target"))
+                commentsWrapper.querySelector("h3") ? commentsWrapper.querySelector("h3").remove() : null
                 return res.json()
             }
         })
-        .then(data => console.log(data))
     }
 }
 

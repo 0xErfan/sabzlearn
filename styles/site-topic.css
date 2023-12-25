@@ -73,9 +73,9 @@ header {
     content: "^";
     width: 2rem;
     height: 2rem;
-    top: 0;
+    top: .4rem;
     bottom: 0;
-    left: -2.5rem;
+    left: -2.2rem;
     color: inherit;
     padding-right: .5rem;
     font-weight: 500;
@@ -267,6 +267,7 @@ header {
     cursor: pointer;
     margin-left: 7rem;
     transition: all 0.3s ease;
+    border: 0.1rem solid rgba(148, 163, 184, 0.23)
 }
 
 .user__theme svg {
@@ -286,8 +287,9 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 6rem;
-    height: 5.5rem;
+    height: 6rem;
     padding-left: 1.5rem;
+    border: .1rem solid rgba(148, 163, 184, 0.23);
 }
 
 .header__searhboxmenu {
@@ -301,9 +303,29 @@ header {
     color: var(--p-colors);
 }
 
-.header__search--svgmenu:hover {
-    width: 4rem !important;
-} 
+.header__search--svg {
+    position: relative;
+}
+
+.header__searhboxmenu--lg {
+    background-color: var(--primary-bg-color);
+    justify-content: center;
+    align-items: center;
+    border-radius: 6rem;
+    height: 6rem;
+    padding-left: 1.5rem;
+    margin: 5rem 0 2.5rem 0;
+    border-radius: 1.5rem;
+    display: none;
+    width: 25rem;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 100;
+    top: 5%;
+    transform: translate(50%, 50%);
+    background-color: var(--pure-white);
+    box-shadow: 0 0.1rem 1rem;
+}
 
 .header__search--svgmenu svg {
     margin-top: .6rem;
@@ -311,8 +333,12 @@ header {
 }
 
 .header__search--svg svg {
-    padding-top: .6rem;
+    padding-top: 1rem;
     cursor: pointer;
+}
+
+#searchBtn {
+    display: none;
 }
 
 .header__searhbox--inputmenu::placeholder,

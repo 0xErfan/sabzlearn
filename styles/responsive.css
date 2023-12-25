@@ -6,7 +6,7 @@
     .header__search--svg {
         width: 6rem;
         height: 6rem;
-        padding: 1.2rem;
+        padding: 1.3rem;
     }
 
     .header__searhbox--input {
@@ -19,6 +19,14 @@
 
     .header__searhbox {
         padding-left: 0;
+    }
+
+    .search__btn {
+        display: none;
+    }
+
+    #searchBtn {
+        display: block;
     }
 }
 
@@ -33,7 +41,7 @@
 
     header {
         padding: 3rem 1.5rem;
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 
     .header__courses--list {
@@ -74,6 +82,20 @@
         justify-content: space-evenly;
         text-align: center;
     } 
+
+    .header__logo img {
+        width: 9rem;
+        height: 6rem;
+    }
+
+    .header__courses--list {
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .header__useracount {
+        gap: .5rem;
+    }
 }
 
 @media screen and (max-width: 992px) {

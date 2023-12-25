@@ -1,4 +1,4 @@
-import { getAllCourses, isLoginF } from "./utilities.js"
+import { isLoginF } from "./utilities.js"
 import { checkUserTheme } from "./utilities.js"
 import { changeTheme } from "./utilities.js"
 import { searchTheWord } from "./utilities.js"
@@ -7,18 +7,18 @@ const $ = document
 const navigationBtn = $.querySelector(".navigation")
 const mobileMenu = $.querySelector(".menu")
 const closeMenuBtn = $.querySelector(".close__menu")
-const courseItems = $.querySelectorAll(".course__items")
 const userProfile = $.querySelector(".user__profile")
 const userInfo = $.querySelector('.show__data')
 const exitFromAccount = $.querySelector(".exit__account")
-const courseItemsArray = Array.from(courseItems)
+const secondSearchBox = $.querySelector(".header__searhboxmenu--lg")
 let headerCoursesList = $.querySelector(".header__courses--list")
 let menuCourseWrapper = $.querySelector(".menu__course--wrapper")
 let userTheme = $.querySelector(".user__theme")
 let changeThemeBtn = $.querySelector(".change__theme-btn svg")
-let mobileMenuSearch = $.querySelector(".header__searhbox--inputmenu")
-let pcMenuSearch = $.querySelector(".header__searhbox--input")
-let pcMenu = $.querySelector(".header__searhbox")
+
+let searchBtnLgValue = $.querySelector("#searchBtnLgValue")
+let searchBtnXlValue = $.querySelector("#searchBtnXlValue")
+let pcMenuSearch = $.querySelector("#header__searhbox--inputmenu")
 
 
 function clickAnimation(data) {
@@ -116,15 +116,20 @@ const getCourses = () => {
     })
 }
 
+$.querySelector("#searchBtn").addEventListener("click", e => {
+    if (secondSearchBox?.style.display == "flex") {
+        secondSearchBox.style.display = ""
+    } else {
+        secondSearchBox.style.display = "flex"
+    }
+})
 
-
-$.querySelector(".header__search--svgmenu").addEventListener("click", () => searchTheWord(mobileMenuSearch.value.trim()))
-
-$.querySelector(".header__search--svg").addEventListener("click", () => searchTheWord(pcMenuSearch.value.trim()))
-
-pcMenu.addEventListener("keydown", e => e.key == "Enter" ? searchTheWord(pcMenuSearch.value.trim()) : null)
-
-mobileMenuSearch.addEventListener("keydown", e => e.key == "Enter" ? searchTheWord(mobileMenuSearch.value.trim()) : null)
+$.querySelector("#searchBtnLg").addEventListener("click", () => searchTheWord(searchBtnLgValue.value.trim()))
+$.querySelector("#searchBtnXl").addEventListener("click", () => searchTheWord(searchBtnXlValue.value.trim()))
+$.querySelector("#searchBtnXll").addEventListener("click", () => searchTheWord(pcMenuSearch.value.trim()))
+$.querySelector("#searchBtnLgValue").addEventListener("keydown", e => e.key == "Enter" ? searchTheWord(searchBtnLgValue.value.trim()) : null)
+$.querySelector("#searchBtnXlValue").addEventListener("keydown", e => e.key == "Enter" ? searchTheWord(searchBtnXlValue.value.trim()) : null)
+pcMenuSearch.addEventListener("keydown", e => e.key == "Enter" ? searchTheWord(pcMenuSearch.value.trim()) : null)
 
 userTheme.addEventListener("click", () => changeTheme())
 
