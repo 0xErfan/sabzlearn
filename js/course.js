@@ -39,16 +39,19 @@ const getCourseDetails = () => {
     .then(res => res.json())
     .then(data => {
         setCourseDetails(data);
+
         $.querySelector(".course__content-get").addEventListener("click", () => {
             data.isUserRegisteredToThisCourse ? allLessonsWrapper.scrollIntoView({ behavior: "smooth" }) : registerUserToCourse(data)
         })
+
         getCourseComments(data.comments)
+
         getCourseSessions(data.sessions)
     })
 }
 
 const setCourseDetails = data => {
-
+    $.head.querySelector("title").innerHTML = data.name
     $.querySelector("video").poster = `http://localhost:4000/courses/covers/${data.cover}`;
     $.querySelector(".course__content-cost").innerHTML = data.price != 0 ? data.price.toLocaleString() + " تومان" : "رایگان";
     $.querySelector("#course__status").innerHTML = data.status == "start" ? "درحال برگزاری" : "تکمیل شده";
@@ -57,6 +60,7 @@ const setCourseDetails = data => {
     $.querySelector("#course__description").innerHTML = data.description
     $.querySelector("#course__support").innerHTML = data.support
     $.querySelector("#course__hoze").innerHTML = data.categoryID.title
+    Array.from($.querySelectorAll(".course__link-area p")).map(el => el.innerHTML = location.href)
 
     if (data.isUserRegisteredToThisCourse) {
         $.querySelector(".course__content-get p").innerHTML = "مشاهده دوره"
@@ -331,7 +335,6 @@ const getCourseSessions = sessions => {
         let userCondition = data.isUserRegisteredToThisCourse
         if (sessions.length) {
             sessions.forEach((sess, ind) => {
-                console.log(sess);  
                 sessionsWrapper.insertAdjacentHTML("beforeend", `
                     <div class="lesson__detail">
                         ${

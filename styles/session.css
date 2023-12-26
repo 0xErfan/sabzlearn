@@ -174,3 +174,11 @@
 .lesson__detail-number--active {
     background-color: var(--cost-color);
 }
+
+.course__link-area {
+    padding: .5rem 0;
+}
+
+.course__link-address {
+    text-align: left;
+}

@@ -63,6 +63,7 @@ const setSessionDetails = async (session, sessions) => {
         min = min < 10 ? `0${min}` : min
 
         let getLength = sessions.findIndex(mems => mems._id == session._id)
+        $.head.querySelector("title").innerHTML = data.name
         getAllUserData().then(res => res.json()).then(data => {$.querySelector("#newCommentUserName").innerHTML = data.username, userData = data})
         $.querySelector("#course-path-name").innerHTML = data.name
         $.querySelector(".idn--comment").innerHTML = data.name

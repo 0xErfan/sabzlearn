@@ -55,7 +55,7 @@ header {
 
 .header__courses--list {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .frontend {
@@ -69,19 +69,10 @@ header {
     margin: 0;
 }
 
-.frontend::after {
-    content: "^";
-    width: 2rem;
-    height: 2rem;
-    top: .4rem;
-    bottom: 0;
-    left: -2.2rem;
-    color: inherit;
-    padding-right: .5rem;
-    font-weight: 500;
-    font-size: 2rem;
-    position: absolute;
-    transform: rotate(180deg);
+.course__titles-wrapper {
+    display: flex;
+    gap: .5rem;
+    flex-direction: row-reverse;
 }
 
 .frontend__edit::after {
@@ -103,7 +94,7 @@ header {
     position: absolute;
     opacity: 0;
     width: 25rem;
-    margin-top: 1.5rem;
+    margin-top: .5rem;
     visibility: hidden;
     background-color: var(--pure-white);
     line-height: 4rem;
@@ -119,6 +110,14 @@ header {
 .frontend:hover .courses__frontend {
     visibility: visible;
     opacity: 1;
+}
+
+.course__titles-wrapper svg {
+    transition: all 0.3s ease 100ms;
+}
+
+.frontend:hover .course__titles-wrapper svg{
+    transform: rotate(180deg);
 }
 
 .frontend:hover h4 {
@@ -196,12 +195,14 @@ header {
     max-width: 28rem;
     padding: 1rem 2rem;
     border-radius: 1.5rem;
-    box-shadow: 0 1.1rem 4rem -1rem #0000003d;
+    box-shadow: 0 1.1rem 4rem -1rem var(--lessons-color);
     position: fixed;
     z-index: 20;
     top: 14rem;
     left: -26rem;
     opacity: 0;
+    backdrop-filter: blur(6px);
+    background: transparent;
     transition: all 0.3s ease;
 }
 
@@ -229,7 +230,7 @@ header {
 }
 
 .show__data a:hover {
-    background-color: var(--primary-bg-color);
+    color: var(--cost-color);
 }
 
 .show__data a:nth-child(4) {
@@ -431,22 +432,25 @@ header {
 }
 
 .menu__course--wrapper li span {
-    position: relative;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     cursor: pointer;
 }
 
-.menu__course--wrapper li span::after {
-    content: "^";
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    left: 0;
-    display: inline;
-    transform-origin: center;
-    transform: var(--deg, rotate(180deg));
-    transition: all 160ms ease;
+.course__items-svg {
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-top: .6rem;
+    transform: rotate(0deg);
+}
+
+.course__items-svg {
+    transition: all 0.3s ease;
+}
+
+.course__items-svg--active {
+    transform: rotate(180deg);
 }
 
 .course__items--wrapper {

@@ -110,7 +110,9 @@ svg::after {
     overflow: hidden;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    width: 100%;
+    max-width: 100%;
 }
 
 .course__content-video {
@@ -320,8 +322,15 @@ svg::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .5rem 2.5rem;
-    color: var(--p-colors)
+    padding: .5rem 1rem;
+    text-align: left;
+    color: var(--p-colors);
+    gap: 1rem;
+}
+
+.course__link-address {
+    font-size: 1.6rem;
+    overflow-wrap: anywhere;
 }
 
 .course__link-area svg {
@@ -544,7 +553,7 @@ svg::after {
 .lesson__detail-cost {
     display: inline-block;
     border-radius: 0.6rem;
-    background: #cfcfcf;
+    background: var(--user-comment);
     padding: 0.3rem 1rem;
 }
 

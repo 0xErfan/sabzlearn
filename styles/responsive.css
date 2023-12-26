@@ -45,7 +45,11 @@
     }
 
     .header__courses--list {
-        gap: 3.5rem;
+        gap: 1.4rem;
+    }
+
+    .course__titles-wrapper {
+        gap: .3rem;
     }
 
     .our__help--wrapper {
@@ -86,11 +90,6 @@
     .header__logo img {
         width: 9rem;
         height: 6rem;
-    }
-
-    .header__courses--list {
-        gap: 3rem;
-        text-align: center;
     }
 
     .header__useracount {
@@ -253,13 +252,17 @@
         display: none;
     }
 
+    .course__video-wrapper {
+        margin-top: 5rem;
+    }
+
     .course__content {
         padding-top: 5rem;
     }
 
     .course__content-btn-cost {
         flex-direction: column-reverse;
-        gap: 2rem;
+        gap: 8rem;
     }
 
     .course__information {
@@ -271,6 +274,7 @@
     .course__content-get {
         width: 100%;
         justify-content: center;
+        text-align: center;
     }
 
     .course__content-video {
@@ -279,6 +283,7 @@
 
     .infos--left {
         flex-direction: row;
+        min-height: 12rem;
     }
 
     body::-webkit-scrollbar {
