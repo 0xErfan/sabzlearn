@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "sarbaz";
+        src: url("../../../fonts/فونت\ سرباز.ttf") format("truetype");
+    }
+}
+
+.menu__active {
+    @apply relative bg-gradient-to-r from-zinc-700 to-zinc-600 text-purple-300;
+}
+
+.menu__active::after {
+    content: "";
+    position: absolute;
+    width: .5rem;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: #d33232;
+}
+
+.bell_active::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 7px;
+    bottom: 0;
+    right: 5px;
+    border-radius: 50%;
+    z-index: 20;
+    background-color: rgb(190, 49, 49);
+}

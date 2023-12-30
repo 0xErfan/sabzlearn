@@ -2,8 +2,18 @@
 module.exports = {
   content: ["./public/*.html"],
   theme: {
-    extend: {},
+    container: { center: true },
+    extend: {
+      fontFamily: { "sarbaz": "sarbaz" },
+      backgroundImage: {
+        "company": "url('./public/images/224491-meeting-wallpaper-top-free-meeting-background.jpg')"
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('ch', '& > *');
+      addVariant('ch-hover', '& > *:hover');
+    }
+  ],
 }
-
