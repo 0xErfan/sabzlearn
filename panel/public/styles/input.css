@@ -32,8 +32,9 @@
     height: 7px;
     top: 7px;
     bottom: 0;
-    right: 5px;
+    right: 6px;
     border-radius: 50%;
     z-index: 20;
     background-color: rgb(190, 49, 49);
+    @apply animate-bounce;
 }

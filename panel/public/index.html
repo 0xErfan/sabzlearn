@@ -6,35 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../public/styles/style.css" />
   <title>Admin panel</title>
+  <script type="module" src="./js/main.js" defer></script>
 </head>
 
-<body class="font-sarbaz bg-gray-700 flex">
+<body class="font-sarbaz bg-gray-700 flex overflow-hidden relative">
+
+  <img class="absolute inset-0 object-cover h-screen w-full -z-10" src="./images/224491-meeting-wallpaper-top-free-meeting-background.jpg" alt="company">
+    
 
   <!-- start menu -->
   <section
-    class="menu absolute xl:static flex-col top-0 bottom-0 -right-64 w-64 h-screen bg-zinc-800 text-white shrink-0 bas">
+    class="menu absolute  flex-col top-0 bottom-0 bg-transparent -right-64  w-64 h-screen transition-all duration-300 bg-zinc-900 text-white shrink-0 z-50">
     <div class="flex items-center justify-between p-2 border-b border-gray-50/25 py-4 mb-4">
       <a href="../../index.html"><img class="w-20 h-14" src="../../img/logo.webp" alt="sabzlearn-logo"
           title="sabzlearn" /></a>
 
-      <svg class="flex xl:w-0 size-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+      <svg class="close__menu flex xl:w-0 size-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
         stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
       </svg>
     </div>
+    
+    
+    <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-40 md:backdrop-blur transition-all"></div>
 
-    <div class="menus flex flex-col ch:transition-all ch:duration-300 first:p-0 ch:py-4 ch:pr-4 text-lg">
-      <a href="#" class="menu__active">صفحه اصلی</a>
-      <a href="#">دوره ها</a>
-      <a href="#">منو ها</a>
-      <a href="#">مقاله ها</a>
-      <a href="#">کاربران</a>
-      <a href="#">دسته بندی ها</a>
+
+    <div class="menus flex flex-col ch-hover:bg-zinc-700 ch:transition-all ch:duration-300 space-y-2 first:p-0 ch:py-4 ch:pr-4 text-lg">
+      <a href="index.html" class="menu__active">صفحه اصلی</a>
+      <a href="course.html">دوره ها</a>
+      <a href="users.html">کاربران</a>
+      <a href="category.html">دسته بندی ها</a>
     </div>
   </section>
   <!-- finish menu -->
 
-  <img class="absolute top-0 left-0 right-0 w-full -z-10" src="./images/224491-meeting-wallpaper-top-free-meeting-background.jpg" alt="company">
+
+
 
   <!-- start main -->
   <main class="size-full h-screen">
@@ -44,35 +51,37 @@
     <!-- start panel topic -->
     <div class="flex inset-0 items-center justify-between px-4 py-6 backdrop-blur-md shadow-md bg-transparent">
       <div class="flex gap-12">
-        <svg class="size-8 xl:hidden text-gray-500" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <svg class="open__menu size-8 xl:hidden text-white" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
-
-        <div class="bell_active flex mr-4 flex-row-reverse text-lg items-center justify-start gap-6 relative">
-          <p class="text-white">erfan عزیز خوش اومدی!</p>
-          <svg class="bell_active relative block size-8 text-gray-500" fill="none" viewBox="0 0 24 24"
-            stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
-          </svg>
+    
+        <div class=" flex mr-4 flex-row-reverse text-lg items-center justify-start gap-12">
+          <div class="bell_active relative">
+            <svg class="block size-8 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+            </svg>
+          </div>
+          <p class="text-white hidden md:block"><span class="log__welcome text-yellow-500"></span> عزیز خوش اومدی!</p>
         </div>
       </div>
-
+    
       <div class="flex items-center gap-4">
-        <h3 class="admin_name relative text-white">erfan eftekhari</h3>
+        <h3 class="admin_name relative text-yellow-500"></h3>
         <img class="size-14 rounded-full" src="../../img/aghay rad.png" />
       </div>
     </div>
     <!-- finish panel topic -->
 
-    
-    <!-- start main body -->
-    <ul class="grid grid-cols-3 px-40 gap-4 py-6 mt-8">
 
-      <li class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+    <!-- start main body -->
+    <ul class="grid grid-cols-1 xs:grid-cols-2 px-8 md:grid-cols-3 md:px-28 gap-4 py-6 mt-8">
+
+      <li
+        class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
         <div>
           <p class="text-white text-xl">مقدار فروش</p>
-          <p class="users__count text-xl text-gray-800">۲۶۶۲</p>
+          <p class="sales__count text-xl text-[#00e7ffcf]">۲۶۶۲</p>
         </div>
         <div>
           <svg class="size-14 bg-green-600 text-white p-2 rounded-xl" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -83,10 +92,11 @@
         </div>
       </li>
 
-      <li class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+      <li
+        class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
         <div>
           <p class="text-white text-xl">تعداد مشتریان</p>
-          <p class="users__count text-xl text-gray-800">۳۴۳۴۸</p>
+          <p class="users__count text-xl text-[#00e7ffcf]">۳۴۳۴۸</p>
         </div>
         <div>
           <svg class="size-14 text-white p-2 bg-orange-500 rounded-xl" fill="none" viewBox="0 0 24 24"
@@ -97,10 +107,11 @@
         </div>
       </li>
 
-      <li class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+      <li
+        class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
         <div>
           <p class="text-white text-xl">تعداد محصولات</p>
-          <p class="users__count text-xl text-gray-800">345</p>
+          <p class="product__count text-xl text-[#00e7ffcf]">345</p>
         </div>
         <div>
           <svg class="size-14 text-white p-2 bg-sky-600 rounded-xl" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -113,30 +124,22 @@
 
     </ul>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-      <!-- (:😂😂😂😂😂😂😂 -->
-      <img class="w-full h-72 rounded-xl"  src="./images/chart.png" alt="chart">
+    <div class="flex items-center justify-center px-12">
 
-      <div class="bg-white p-2 rounded-xl bg-transparent backdrop-blur-xl shadow-md">
+      <div class=" p-4 rounded-xl bg-transparent backdrop-blur-xl shadow-md">
         <h3 class="text-xl pb-4 text-white">دوره های پرفروش</h3>
-        <div class="grid grid-cols-3 gap-4">
-          <div class="flex w-full ch:basis-1/2 overflow-hidden rounded-lg border h-24 border-zinc-50/20">
-            <div class="p-1">
-              <p class="text-sm line-clamp-2 text-gray-400">ای پی ای نویسی با پایتون</p>
-              <p class="text-green-600">۱۲۰۰۰۰۰ تومان</p>
-            </div>
-            <img class="block h-auto" src="../../img/Com_python.png" alt="">
-          </div>
+        <div class="courses__wrapper grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+          
         </div>
       </div>
+      
     </div>
     <!-- finish main body -->
-
 
   </main>
   <!-- finish main -->
 
-  <script src="./js/main.js"></script>
+
 </body>
 
 </html>

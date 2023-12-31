@@ -5,10 +5,8 @@ module.exports = {
     container: { center: true },
     extend: {
       fontFamily: { "sarbaz": "sarbaz" },
-      backgroundImage: {
-        "company": "url('./public/images/224491-meeting-wallpaper-top-free-meeting-background.jpg')"
-      }
-    },
+      screens: { "xs": "576px" },
+    }
   },
   plugins: [
     function ({ addVariant }) {
