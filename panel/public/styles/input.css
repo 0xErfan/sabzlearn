@@ -13,6 +13,18 @@
     @apply relative bg-gradient-to-r from-zinc-700 to-zinc-600 text-purple-300;
 }
 
+.show {
+    @apply size-full
+}
+
+.menu__open {
+    @apply -right-0 opacity-100;
+}
+
+.notif__active {
+    @apply opacity-100 visible h-40
+}
+
 .menu__active::after {
     content: "";
     position: absolute;
@@ -36,5 +48,5 @@
     border-radius: 50%;
     z-index: 20;
     background-color: rgb(190, 49, 49);
-    @apply animate-bounce;
+    @apply animate-ping;
 }

@@ -16,7 +16,7 @@ const accepted = (token) => {
     for(let input of allInputs) {input.value = ""};
     setTimeout(() => {
         location.href = "http://127.0.0.1:5500/index.html"
-    }, 4000)
+    }, 2000)
 }
 
 const loginInputsValue = (event) => {

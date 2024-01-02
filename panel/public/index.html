@@ -1,145 +1,154 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="fa" dir="rtl">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../public/styles/style.css" />
-  <title>Admin panel</title>
-  <script type="module" src="./js/main.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://sabzlearn.ir/wp-content/uploads/2023/08/cropped-sabz-fav-32x32.png">
+    <link rel="stylesheet" href="../public/styles/style.css" />
+    <title>Admin panel</title>
 </head>
 
 <body class="font-sarbaz bg-gray-700 flex overflow-hidden relative">
 
-  <img class="absolute inset-0 object-cover h-screen w-full -z-10" src="./images/224491-meeting-wallpaper-top-free-meeting-background.jpg" alt="company">
-    
+    <img class="absolute inset-0 object-cover h-screen w-full -z-10"
+        src="./images/224491-meeting-wallpaper-top-free-meeting-background.jpg" alt="company">
 
-  <!-- start menu -->
-  <section
-    class="menu absolute  flex-col top-0 bottom-0 bg-transparent -right-64  w-64 h-screen transition-all duration-300 bg-zinc-900 text-white shrink-0 z-50">
-    <div class="flex items-center justify-between p-2 border-b border-gray-50/25 py-4 mb-4">
-      <a href="../../index.html"><img class="w-20 h-14" src="../../img/logo.webp" alt="sabzlearn-logo"
-          title="sabzlearn" /></a>
+    <!-- start menu -->
+    <section
+        class="menu absolute flex-col top-0 bottom-0 opacity-0 -right-64 bg-transparent w-64 h-screen transition-all duration-200 bg-zinc-900 text-white shrink-0 z-50">
+        <div class="flex items-center justify-between p-2 border-b border-gray-50/25 py-4 mb-4">
+            <a href="../../index.html"><img class="w-20 h-14" src="../../img/logo.webp" alt="sabzlearn-logo"
+                    title="sabzlearn" /></a>
 
-      <svg class="close__menu flex xl:w-0 size-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-        stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-      </svg>
-    </div>
-    
-    
-    <div class="overlay fixed w-full h-full top-0 left-0 bg-black/40 z-40 md:backdrop-blur transition-all"></div>
-
-
-    <div class="menus flex flex-col ch-hover:bg-zinc-700 ch:transition-all ch:duration-300 space-y-2 first:p-0 ch:py-4 ch:pr-4 text-lg">
-      <a href="index.html" class="menu__active">صفحه اصلی</a>
-      <a href="course.html">دوره ها</a>
-      <a href="users.html">کاربران</a>
-      <a href="category.html">دسته بندی ها</a>
-    </div>
-  </section>
-  <!-- finish menu -->
-
-
-
-
-  <!-- start main -->
-  <main class="size-full h-screen">
-
-
-
-    <!-- start panel topic -->
-    <div class="flex inset-0 items-center justify-between px-4 py-6 backdrop-blur-md shadow-md bg-transparent">
-      <div class="flex gap-12">
-        <svg class="open__menu size-8 xl:hidden text-white" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-    
-        <div class=" flex mr-4 flex-row-reverse text-lg items-center justify-start gap-12">
-          <div class="bell_active relative">
-            <svg class="block size-8 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+            <svg class="close__menu flex xl:w-0 size-6 cursor-pointer" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
-          </div>
-          <p class="text-white hidden md:block"><span class="log__welcome text-yellow-500"></span> عزیز خوش اومدی!</p>
         </div>
-      </div>
-    
-      <div class="flex items-center gap-4">
-        <h3 class="admin_name relative text-yellow-500"></h3>
-        <img class="size-14 rounded-full" src="../../img/aghay rad.png" />
-      </div>
-    </div>
-    <!-- finish panel topic -->
 
-
-    <!-- start main body -->
-    <ul class="grid grid-cols-1 xs:grid-cols-2 px-8 md:grid-cols-3 md:px-28 gap-4 py-6 mt-8">
-
-      <li
-        class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
-        <div>
-          <p class="text-white text-xl">مقدار فروش</p>
-          <p class="sales__count text-xl text-[#00e7ffcf]">۲۶۶۲</p>
+        <div
+            class="menus flex flex-col ch-hover:bg-zinc-700 ch:transition-all ch:duration-300 space-y-2 first:p-0 ch:py-4 ch:pr-4 text-lg">
+            <a href="index.html" class="menu__active">صفحه اصلی</a>
+            <a href="course.html">دوره ها</a>
+            <a href="users.html">کاربران</a>
+            <a href="category.html">دسته بندی ها</a>
         </div>
-        <div>
-          <svg class="size-14 bg-green-600 text-white p-2 rounded-xl" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
-          </svg>
+    </section>
+
+    <!-- start main -->
+    <main class="size-full h-screen">
+
+        <!-- start panel topic -->
+        <div class="flex inset-0 items-center justify-between px-4 py-6 backdrop-blur-md shadow-md bg-transparent">
+            <div class="flex gap-12">
+                <svg class="open__menu size-8 xl:hidden cursor-pointer text-white" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+
+                <div class=" flex mr-4 flex-row-reverse text-lg items-center justify-start gap-12">
+                    <div class="bell bell_active relative">
+                        <svg class="block size-8 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                        </svg>
+                        <div class="notif absolute invisible transition-all opacity-0 duration-300 w-72 h-0 bg-white shadow-xl shadow-black/30 left-0 right-0 top-10 p-3 rounded-md z-30">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, et.
+                        </div>
+                    </div>
+                    <p class="text-white hidden md:block"><span class="log__welcome text-yellow-500"></span> عزیز خوش
+                        اومدی!</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <h3 class="admin_name relative text-yellow-500"></h3>
+                <img class="size-14 rounded-full" src="../../img/aghay rad.png" />
+            </div>
         </div>
-      </li>
 
-      <li
-        class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
-        <div>
-          <p class="text-white text-xl">تعداد مشتریان</p>
-          <p class="users__count text-xl text-[#00e7ffcf]">۳۴۳۴۸</p>
+        <!-- start main body -->
+        <ul class="grid grid-cols-1 xs:grid-cols-2 px-8 md:grid-cols-3 md:px-28 ch:-z-10 gap-4 py-6 mt-8">
+
+            <li
+                class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+                <div>
+                    <p class="text-white text-xl">مقدار فروش</p>
+                    <p class="sales__count text-xl text-[#00e7ffcf]">۲۶۶۲</p>
+                </div>
+                <div>
+                    <svg class="size-14 bg-green-600 text-white p-2 rounded-xl" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                    </svg>
+                </div>
+            </li>
+
+            <li
+                class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+                <div>
+                    <p class="text-white text-xl">تعداد مشتریان</p>
+                    <p class="users__count text-xl text-[#00e7ffcf]">۳۴۳۴۸</p>
+                </div>
+                <div>
+                    <svg class="size-14 text-white p-2 bg-orange-500 rounded-xl" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </div>
+            </li>
+
+            <li
+                class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+                <div>
+                    <p class="text-white text-xl">تعداد محصولات</p>
+                    <p class="product__count text-xl text-[#00e7ffcf]">345</p>
+                </div>
+                <div>
+                    <svg class="size-14 text-white p-2 bg-sky-600 rounded-xl" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75-1.5.75a3.354 3.354 0 0 1-3 0 3.354 3.354 0 0 0-3 0 3.354 3.354 0 0 1-3 0 3.354 3.354 0 0 0-3 0 3.354 3.354 0 0 1-3 0L3 16.5m15-3.379a48.474 48.474 0 0 0-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 0 1 3 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 0 1 6 13.12M12.265 3.11a.375.375 0 1 1-.53 0L12 2.845l.265.265Zm-3 0a.375.375 0 1 1-.53 0L9 2.845l.265.265Zm6 0a.375.375 0 1 1-.53 0L15 2.845l.265.265Z" />
+                    </svg>
+                </div>
+            </li>
+
+        </ul>
+
+        <div class="px-12">
+
+            <div class="p-4 rounded-xl bg-transparent backdrop-blur-xl shadow-md">
+                <h3 class="text-xl pb-4 text-white">دوره های پرفروش</h3>
+                <div class="courses__wrapper grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+
+                    <div
+                        class="flex justify-between overflow-hidden rounded-lg border border-white/20 hover:-translate-y-2 h-32 transition-all duration-300 cursor-pointer shadow-xl">
+                        <div class="flex flex-col justify-between p-3 basis-1/3">
+                            <p class=" line-clamp-3 text-sky-50">${course.name}</p>
+                            <p class="text-green-600 text-xl">${course.price == 0 ? "رایگان" :
+                                (course.price).toLocaleString()}</p>
+                        </div>
+                        <div class="block size-2  overflow-hidden">
+                            <img class="size-full object-cover"
+                                src="http://localhost:4000/courses/covers/${course.cover}">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-        <div>
-          <svg class="size-14 text-white p-2 bg-orange-500 rounded-xl" fill="none" viewBox="0 0 24 24"
-            stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-          </svg>
-        </div>
-      </li>
+    </main>
 
-      <li
-        class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
-        <div>
-          <p class="text-white text-xl">تعداد محصولات</p>
-          <p class="product__count text-xl text-[#00e7ffcf]">345</p>
-        </div>
-        <div>
-          <svg class="size-14 text-white p-2 bg-sky-600 rounded-xl" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75-1.5.75a3.354 3.354 0 0 1-3 0 3.354 3.354 0 0 0-3 0 3.354 3.354 0 0 1-3 0 3.354 3.354 0 0 0-3 0 3.354 3.354 0 0 1-3 0L3 16.5m15-3.379a48.474 48.474 0 0 0-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 0 1 3 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 0 1 6 13.12M12.265 3.11a.375.375 0 1 1-.53 0L12 2.845l.265.265Zm-3 0a.375.375 0 1 1-.53 0L9 2.845l.265.265Zm6 0a.375.375 0 1 1-.53 0L15 2.845l.265.265Z" />
-          </svg>
-        </div>
-      </li>
+    <!-- overlay -->
+    <div class="overlay absolute inset-0 transition-all duration-200 backdrop-blur-sm size-0"></div>
 
-    </ul>
-
-    <div class="flex items-center justify-center px-12">
-
-      <div class=" p-4 rounded-xl bg-transparent backdrop-blur-xl shadow-md">
-        <h3 class="text-xl pb-4 text-white">دوره های پرفروش</h3>
-        <div class="courses__wrapper grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
-          
-        </div>
-      </div>
-      
-    </div>
-    <!-- finish main body -->
-
-  </main>
-  <!-- finish main -->
-
-
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

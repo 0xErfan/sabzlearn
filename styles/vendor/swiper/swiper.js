@@ -15,11 +15,8 @@
 
 const swiperEl = document.querySelector('swiper-container');
 const swiperParams = {
-    slidesPerView: 4,
+    slidesPerView: 1,
     breakpoints: {
-        456: {
-            slidesPerView: 1
-        },
         576: {
             slidesPerView: 2,
         },
