@@ -9,6 +9,14 @@
     }
 }
 
+:root {
+    --p-colors: #64768B;
+    --topic-texts-color: #3F3F46;
+    --pure-white: #fff;
+    --pink: #EC4899;
+    --cost-color: #2ED473;
+}
+
 .menu__active {
     @apply relative bg-gradient-to-r from-zinc-700 to-zinc-600 text-purple-300;
 }
@@ -22,7 +30,7 @@
 }
 
 .notif__active {
-    @apply opacity-100 visible h-40
+    @apply opacity-100 visible
 }
 
 .menu__active::after {
@@ -40,13 +48,76 @@
 .bell_active::before {
     content: "";
     position: absolute;
-    width: 7px;
-    height: 7px;
+    width: 9px;
+    height: 9px;
     top: 7px;
     bottom: 0;
     right: 6px;
     border-radius: 50%;
     z-index: 20;
     background-color: rgb(190, 49, 49);
-    @apply animate-ping;
+    @apply animate-bounce;
+}
+
+
+
+
+
+
+/* modal styles */
+
+.form__modal {
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    left: -320px;
+    top: 15px;
+    background-color: var(--pure-white);
+    font-size: 18px;
+    max-width: 320px;
+    /* box-shadow: 0 11px 40px -20px #0000003d; */
+    border-radius: 10px;
+    padding: 15px;
+    word-spacing: 2px;
+    text-align: right;
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.form__modal * {
+    z-index: 30;
+}
+
+.form__status--msg {
+    color: var(--topic-texts-color);
+}
+
+.form__details-msg {
+    color: var(--p-colors);
+}
+
+.form__svg {
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+}
+
+.form__svg svg {
+    width: 30px;
+    height: 30px;
+    background-color: var(--pink);
+    padding: 5px;
+    border-radius: 40px;
+    stroke: var(--pure-white);
+}
+
+.form__linetime {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--pink);
+    width: 100%;
+    height: 4px;
+    border-radius: 50px;
 }

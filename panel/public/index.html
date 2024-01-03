@@ -14,9 +14,10 @@
     <img class="absolute inset-0 object-cover h-screen w-full -z-10"
         src="./images/224491-meeting-wallpaper-top-free-meeting-background.jpg" alt="company">
 
+
     <!-- start menu -->
     <section
-        class="menu absolute flex-col top-0 bottom-0 opacity-0 -right-64 bg-transparent w-64 h-screen transition-all duration-200 bg-zinc-900 text-white shrink-0 z-50">
+        class="menu absolute flex-col top-0 bottom-0 opacity-0 -right-64 bg-transparent w-64 h-screen transition-all duration-100 bg-zinc-900 text-white shrink-0 z-50">
         <div class="flex items-center justify-between p-2 border-b border-gray-50/25 py-4 mb-4">
             <a href="../../index.html"><img class="w-20 h-14" src="../../img/logo.webp" alt="sabzlearn-logo"
                     title="sabzlearn" /></a>
@@ -39,6 +40,21 @@
     <!-- start main -->
     <main class="size-full h-screen">
 
+        <!-- modal caller -->
+        <div class="form__modal">
+            <div class="form__msg">
+                <div class="form__status--msg">خطا</div>
+                <div class="form__details-msg">
+                </div>
+            </div>
+            <div class="form__svg">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+            </div>
+            <div class="form__linetime"></div>
+        </div>
+
         <!-- start panel topic -->
         <div class="flex inset-0 items-center justify-between px-4 py-6 backdrop-blur-md shadow-md bg-transparent">
             <div class="flex gap-12">
@@ -55,8 +71,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
                         </svg>
-                        <div class="notif absolute invisible transition-all opacity-0 duration-300 w-72 h-0 bg-white shadow-xl shadow-black/30 left-0 right-0 top-10 p-3 rounded-md z-30">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, et.
+                        <div
+                            class="notif absolute invisible transition-all opacity-0  duration-300 w-[400px] h-auto bg-white/90 shadow-xl shadow-black/30 left-0 right-0 top-10 p-3 rounded-md z-30">
+
+                            <!-- load from db -->
+
                         </div>
                     </div>
                     <p class="text-white hidden md:block"><span class="log__welcome text-yellow-500"></span> عزیز خوش
