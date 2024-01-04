@@ -12,24 +12,24 @@
 <body class="font-sarbaz bg-gray-700 flex overflow-hidden relative">
 
     <img class="absolute inset-0 object-cover h-screen w-full -z-10"
-        src="./images/224491-meeting-wallpaper-top-free-meeting-background.jpg" alt="company">
+        src="./images/96689.jpg" alt="company">
 
 
     <!-- start menu -->
     <section
-        class="menu absolute flex-col top-0 bottom-0 opacity-0 -right-64 bg-transparent w-64 h-screen transition-all duration-100 bg-zinc-900 text-white shrink-0 z-50">
-        <div class="flex items-center justify-between p-2 border-b border-gray-50/25 py-4 mb-4">
+        class="menu absolute xl:opacity-100 xl:flex xl:static backdrop-blur-md border-l border-[#808080] flex-col top-0 bottom-0 opacity-0 -right-64 bg-transparent w-64 h-screen transition-all duration-100 text-white shrink-0 z-50">
+        <div class="flex items-center xl:justify-center justify-between p-2 py-4 mb-4">
             <a href="../../index.html"><img class="w-20 h-14" src="../../img/logo.webp" alt="sabzlearn-logo"
                     title="sabzlearn" /></a>
 
-            <svg class="close__menu flex xl:w-0 size-6 cursor-pointer" fill="none" viewBox="0 0 24 24"
+            <svg class="close__menu flex size-6 xl:w-0 cursor-pointer" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </div>
 
         <div
-            class="menus flex flex-col ch-hover:bg-zinc-700 ch:transition-all ch:duration-300 space-y-2 first:p-0 ch:py-4 ch:pr-4 text-lg">
+            class="menus flex flex-col ch-hover:bg-white/30 ch:transition-all ch:duration-300 space-y-2 first:p-0 ch:py-4 ch:pr-4 text-lg">
             <a href="index.html" class="menu__active">صفحه اصلی</a>
             <a href="course.html">دوره ها</a>
             <a href="users.html">کاربران</a>
@@ -72,7 +72,7 @@
                                 d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
                         </svg>
                         <div
-                            class="notif absolute invisible transition-all opacity-0  duration-300 w-[400px] h-auto bg-white/90 shadow-xl shadow-black/30 left-0 right-0 top-10 p-3 rounded-md z-30">
+                            class="notif absolute invisible transition-all opacity-0  duration-300 w-[400px] h-auto bg-black/80 shadow-xl shadow-black/30 left-0 right-0 top-10 p-3 rounded-md z-30">
 
                             <!-- load from db -->
 
@@ -84,8 +84,8 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <h3 class="admin_name relative text-yellow-500"></h3>
-                <img class="size-14 rounded-full" src="../../img/aghay rad.png" />
+                <h3 class="admin_name text-xl relative text-yellow-500"></h3>
+                <img class="size-14 rounded-full" src="./images/ellie-guitar-last-of-us-2-uhdpaper.com-hd-5.2491.jpg" />
             </div>
         </div>
 
@@ -93,7 +93,7 @@
         <ul class="grid grid-cols-1 xs:grid-cols-2 px-8 md:grid-cols-3 md:px-28 ch:-z-10 gap-4 py-6 mt-8">
 
             <li
-                class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+                class="flex items-center h-24 justify-between p-3 rounded-xl border border-[#2ccbe50d]  gap-4 shadow-md bg-transparent backdrop-blur-xl">
                 <div>
                     <p class="text-white text-xl">مقدار فروش</p>
                     <p class="sales__count text-xl text-[#00e7ffcf]">۲۶۶۲</p>
@@ -108,7 +108,7 @@
             </li>
 
             <li
-                class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+                class="flex items-center h-24 justify-between p-3 rounded-xl border border-[#2ccbe50d]  gap-4 shadow-md bg-transparent backdrop-blur-xl">
                 <div>
                     <p class="text-white text-xl">تعداد مشتریان</p>
                     <p class="users__count text-xl text-[#00e7ffcf]">۳۴۳۴۸</p>
@@ -123,7 +123,7 @@
             </li>
 
             <li
-                class="flex items-center h-24 justify-between p-3 rounded-xl  gap-4 shadow-md bg-transparent backdrop-blur-xl">
+                class="flex items-center h-24 justify-between p-3 rounded-xl border border-[#2ccbe50d]  gap-4 shadow-md bg-transparent backdrop-blur-xl">
                 <div>
                     <p class="text-white text-xl">تعداد محصولات</p>
                     <p class="product__count text-xl text-[#00e7ffcf]">345</p>
@@ -141,7 +141,7 @@
 
         <div class="px-12">
 
-            <div class="p-4 rounded-xl bg-transparent backdrop-blur-xl shadow-md">
+            <div class="p-4 rounded-xl bg-transparent border border-[#2ccbe50d] backdrop-blur-xl shadow-md">
                 <h3 class="text-xl pb-4 text-white">دوره های پرفروش</h3>
                 <div class="courses__wrapper grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
 
@@ -165,9 +165,10 @@
     </main>
 
     <!-- overlay -->
-    <div class="overlay absolute inset-0 transition-all duration-200 backdrop-blur-sm size-0"></div>
+    <div class="overlay absolute inset-0 transition-all duration-200 backdrop-blur-md size-0"></div>
 
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/header.js"></script>
 </body>
 
 </html>

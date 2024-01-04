@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://sabzlearn.ir/wp-content/uploads/2023/08/cropped-sabz-fav-32x32.png">
+    <link rel="stylesheet" href="../public/styles/style.css" />
+    <title>Admin panel</title>
+</head>
+
+<body class="font-sarbaz bg-gray-700 flex overflow-hidden relative">
+
+    <img id="adminProfile" class="absolute inset-0 object-cover h-screen w-full -z-10" src="./images/96689.jpg"
+        alt="company">
+
+
+    <!-- start menu -->
+    <section
+        class="menu absolute xl:opacity-100 xl:flex xl:static backdrop-blur-md border-l border-[#808080] flex-col top-0 bottom-0 opacity-0 -right-64 bg-transparent w-64 h-screen transition-all duration-100 text-white shrink-0 z-50">
+        <div class="flex items-center justify-between xl:justify-center p-2 py-4 mb-4">
+            <a href="../../index.html"><img class="w-20 h-14" src="../../img/logo.webp" alt="sabzlearn-logo"
+                    title="sabzlearn" /></a>
+
+            <svg class="close__menu flex xl:w-0 size-6 cursor-pointer" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </div>
+
+        <div
+            class="menus flex flex-col ch-hover:bg-white/30 ch:transition-all ch:duration-300 space-y-2 first:p-0 ch:py-4 ch:pr-4 text-lg">
+            <a href="index.html">صفحه اصلی</a>
+            <a class="menu__active" href="course.html">دوره ها</a>
+            <a href="users.html">کاربران</a>
+            <a href="category.html">دسته بندی ها</a>
+        </div>
+    </section>
+
+    <main class="size-full h-screen">
+
+        <!-- modal -->
+        <div class="form__modal">
+            <div class="form__msg">
+                <div class="form__status--msg">خطا</div>
+                <div class="form__details-msg">لطفا نام کاربری، شماره موبایل، ایمیل و رمز عبور را به درستی وارد کنید.
+                </div>
+            </div>
+            <div class="form__svg">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+            </div>
+            <div class="form__linetime"></div>
+        </div>
+
+        <!-- start panel topic -->
+        <div class="flex inset-0 items-center justify-between px-4 py-6 backdrop-blur-md shadow-md bg-transparent">
+            <div class="flex gap-12">
+                <svg class="open__menu size-8 xl:hidden cursor-pointer text-white" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+
+                <div class=" flex mr-4 flex-row-reverse text-lg items-center justify-start gap-12">
+                    <div class="bell bell_active relative">
+                        <svg class="block size-8 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                        </svg>
+                        <div
+                            class="notif absolute invisible transition-all opacity-0  duration-300 w-[400px] h-auto bg-black/80 shadow-xl shadow-black/30 left-0 right-0 top-10 p-3 rounded-md z-30">
+
+                            <!-- load from db -->
+
+                        </div>
+                    </div>
+                    <p class="text-white hidden md:block"><span class="log__welcome text-yellow-500"></span> عزیز خوش
+                        اومدی!</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <h3 class="admin_name text-xl relative text-yellow-500"></h3>
+                <img class="size-14 rounded-full" src="./images/ellie-guitar-last-of-us-2-uhdpaper.com-hd-5.2491.jpg" />
+            </div>
+        </div>
+
+        <!--add new course -->
+        <div
+            class="mt-32 m-8 py-2 px-4 rounded-xl border border-sky-500/20 min-h-60 text-xl bg-transparent backdrop-blur-md">
+            <h2 class="text-white/80 pb-4">افزودن دوره جدید</h2>
+
+            <div class="grid sm:grid-cols-2 gap-3 ch:mt-4">
+
+                <div class="space-y-2 w-full flex align-center flex-col ch:placeholder:text-[16px]">
+                    <p class="text-md text-black/70">نام دوره</p>
+                    <input id="course__name"
+                        class="border border-sky-300/40 p-2 outline-none rounded-md invalid:border-pink-500 invalid:text-pink-500 bg-slate-700 text-white text-[17px]"
+                        type="text" placeholder="نام دوره را وارد کنید!" required>
+                </div>
+
+                <div class="space-y-2 w-full flex align-center flex-col ch:placeholder:text-[16px]">
+                    <p class="text-md text-black/70">توضیحات دوره</p>
+                    <input id="course__description"
+                        class="border border-sky-300/40 resize-y p-2 outline-none rounded-md invalid:border-pink-500 invalid:text-pink-500 bg-slate-700 text-white text-[17px]"
+                        type="text" placeholder="توضیحات دوره را وارد کنید!" required>
+                </div>
+
+                <div class="space-y-2 w-full flex align-center flex-col ch:placeholder:text-[16px]">
+                    <p class="text-md text-black/70">قیمت دوره</p>
+                    <input id="course__price"
+                        class="border border-sky-300/40 resize-y p-2 outline-none rounded-md invalid:border-pink-500 invalid:text-pink-500 bg-slate-700 text-white text-[17px]"
+                        type="text" placeholder="قیمت دوره را وارد کنید!" required>
+                </div>
+
+                <div class="space-y-2 w-full flex align-center flex-col ch:placeholder:text-[16px]">
+                    <p class="text-md text-black/70">نام کوتاه(shortname)</p>
+                    <input id="course__shortName"
+                        class="border border-sky-300/40 resize-y p-2 outline-none rounded-md invalid:border-pink-500 invalid:text-pink-500 bg-slate-700 text-white text-[17px]"
+                        type="text" placeholder="نام کوتاه دوره را وارد کنید!" required>
+                </div>
+
+                <div class="space-y-2 w-full flex align-center flex-col ch:placeholder:text-[16px]">
+                    <p class="text-md text-black/70">وضعیت دوره</p>
+
+                    <select id="course__status"
+                        class="border border-sky-300/40 rounded-md bg-slate-700 outline-none ch:text-sky-300/40">
+                        <option>به اتمام رسیده</option>
+                        <option>درحال برگزاری</option>
+                    </select>
+                </div>
+
+                <div class="space-y-2 w-full flex align-center flex-col ch:placeholder:text-[16px]">
+                    <p class="text-md text-black/70">دسته بندی دوره</p>
+
+                    <select id="course__category"
+                        class="border border-sky-300/40 rounded-md bg-slate-700 outline-none ch:text-sky-300/40">
+                        <option>برنامه نویسی فرانت اند</option>
+                        <option>برنامه نویسی بک‌اند</option>
+                        <option>برنامه نویسی فلاتر</option>
+                        <option>پایتون</option>
+                        <option>سی شارپ</option>
+                        <option>برنامه نویسی فلاتر</option>
+                    </select>
+                </div>
+
+                <div class="space-y-2 w-1/3 flex align-center flex-col ch:placeholder:text-[16px]">
+                    <p class="text-md text-black/70">عکس دوره</p>
+                    <label
+                        class="border border-sky-300/40 text-center resize-y p-2 outline-none rounded-md invalid:border-pink-500 invalid:text-pink-500 bg-slate-700 text-white text-[17px] cursor-pointer"
+                        for="course__cover-input">بارگزاری عکس</label>
+                    <input id="course__cover-input" class="hidden" type="file" accept="image/jpeg, image/png, image/jpg"
+                        placeholder="نام کوتاه دوره را وارد کنید!" required>
+                </div>
+
+                <button id="add__course-btn"
+                    class="bg-green-500 hover:bg-green-600 duration-300 hover:-translate-y-1 w-44 h-12 m-auto rounded-lg">افزودن
+                    دوره</button>
+
+            </div>
+        </div>
+
+        <div class="overlay absolute inset-0 transition-all duration-200 backdrop-blur-md size-0"></div>
+    </main>
+
+    <!-- overlay -->
+    <script type="module" src="./js/course.js"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
