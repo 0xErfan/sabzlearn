@@ -1,1 +1,1 @@
-## Sabzlearn clone projecT
+## Sabzlearn clone project
