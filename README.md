@@ -1,1 +1,1 @@
-## Full Sabzlearn clone project with pure js.
+## Full Sabzlearn clone project with pure js
